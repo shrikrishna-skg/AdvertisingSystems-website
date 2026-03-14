@@ -1,4 +1,5 @@
 ---
+import { AnimatedHero } from './ui/animated-hero';
 ---
 
 <section class="relative pt-28 pb-20 sm:pt-40 sm:pb-32 md:pt-48 md:pb-40 overflow-hidden" aria-labelledby="hero-heading">
@@ -16,18 +17,18 @@
         <span class="text-xs sm:text-sm font-semibold text-[var(--text-tertiary)]">Powering $5.2B+ in Ad Spend Across the U.S.</span>
       </div>
 
-      <!-- Headline -->
-      <h1 id="hero-heading" class="reveal text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[80px] font-bold text-[var(--text-primary)] leading-[1.05] tracking-[-0.03em] break-words">
-        Your ads should<br class="hidden sm:block" />
-        <span class="text-gradient">make money,</span> not burn it.
-      </h1>
+      <!-- Headline: rotating titles (Make money, Increase Reach, Scale Smarter, Save Time) -->
+      <div class="reveal">
+        <AnimatedHero
+          client:load
+          titles={['Make money', 'Increase Reach', 'Scale Smarter', 'Save Time']}
+          prefix="Your ads should "
+          suffix=""
+          subheadline="The AI advertising engine that unifies Google, Meta & OTA campaigns into one system — then optimizes every dollar while you sleep."
+        />
+      </div>
 
-      <!-- Subheadline -->
-      <p class="reveal mt-8 text-lg sm:text-xl font-medium text-[var(--text-tertiary)] max-w-3xl mx-auto leading-relaxed">
-        The AI advertising engine that unifies Google, Meta & OTA campaigns into one system &mdash; then optimizes every dollar while you sleep.
-      </p>
-
-      <!-- CTAs (primary: accent line + hover color-shift) -->
+      <!-- CTAs -->
       <div class="reveal mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
           href="/signup"
