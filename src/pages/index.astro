@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import StatsBar from '../components/StatsBar.astro';
+import PainPoints from '../components/PainPoints.astro';
+import Features from '../components/Features.astro';
+import Integrations from '../components/Integrations.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="AdvertisingSystems — AI-Powered Advertising Management | Unify Google, Meta & OTAs"
+  description="Stop wasting ad spend. One platform for Google Ads, Meta Ads, and OTAs. AI optimization, real-time analytics, and cross-channel budget control. Start free or book a demo."
+>
+  <Navbar />
+  <main>
+    <Hero />
+    <StatsBar />
+    <PainPoints />
+    <Features />
+    <Integrations />
+    <Testimonials />
+    <Pricing />
+    <FAQ />
+    <FinalCTA />
+  </main>
+  <Footer />
+</Layout>

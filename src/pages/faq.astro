@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { faqs } from '../data/faq';
+
+const breadcrumbs = [{ name: 'FAQ', href: '/faq' }];
+
+const categories = [
+  {
+    title: 'About the Platform',
+    indices: [0, 1, 5],
+  },
+  {
+    title: 'AI & Optimization',
+    indices: [2, 3],
+  },
+  {
+    title: 'Setup & Security',
+    indices: [4, 6, 7],
+  },
+  {
+    title: 'Pricing & Billing',
+    indices: [8, 9],
+  },
+];
+---
+
+<Layout
+  title="FAQ — Frequently Asked Questions | AdvertisingSystems"
+  description="Quick answers about setup, pricing, AI optimization, integrations, and security. Can't find your question? Contact our team."
+  breadcrumbs={breadcrumbs}
+>
+  <Navbar />
+  <Breadcrumb items={breadcrumbs} />
+  <main>
+    <!-- Hero -->
+    <section class="relative pt-40 pb-20 sm:pt-48 sm:pb-28 overflow-hidden" aria-labelledby="faq-page-heading">
+      <div class="mesh-gradient absolute inset-0"></div>
+      <div class="dot-grid absolute inset-0"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[var(--hero-glow)] rounded-full blur-[128px]"></div>
+
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="reveal inline-flex items-center gap-2 glass rounded-full px-5 py-2 mb-8">
+          <span class="w-2 h-2 bg-royal-green-400 rounded-full animate-pulse"></span>
+          <span class="text-sm font-medium text-[var(--text-tertiary)]">We've Got Answers</span>
+        </div>
+
+        <h1 id="faq-page-heading" class="reveal text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
+          Frequently Asked <span class="text-gradient">Questions</span>
+        </h1>
+        <p class="reveal mt-6 text-lg sm:text-xl text-[var(--text-tertiary)] max-w-2xl mx-auto leading-relaxed">
+          Everything you need to know about AdvertisingSystems. Can't find what you're looking for? Our team is happy to help.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Sections by Category -->
+    <section class="py-20" aria-label="Frequently asked questions">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        {categories.map((category) => (
+          <div class="mb-16 last:mb-0">
+            <h2 class="reveal text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-6 tracking-[-0.02em]">
+              {category.title}
+            </h2>
+
+            <div class="space-y-3">
+              {category.indices.map((i) => (
+                <details class="reveal group glass rounded-xl hover:border-royal-blue-500/20 transition-colors" name={`faq-${category.title}`}>
+                  <summary class="flex items-center justify-between cursor-pointer p-5 sm:p-6 list-none [&::-webkit-details-marker]:hidden">
+                    <h3 class="text-base sm:text-lg font-semibold text-[var(--text-primary)] pr-4">{faqs[i].question}</h3>
+                    <svg class="w-5 h-5 text-[var(--text-muted)] shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div class="px-5 sm:px-6 pb-5 sm:pb-6">
+                    <p class="text-[var(--text-tertiary)] leading-relaxed">{faqs[i].answer}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <!-- Contact CTA -->
+    <section class="relative py-32 overflow-hidden" aria-labelledby="faq-cta-heading">
+      <div class="mesh-gradient absolute inset-0"></div>
+      <div class="dot-grid absolute inset-0"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[var(--hero-glow)] rounded-full blur-[128px]"></div>
+
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 id="faq-cta-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
+          Still have <span class="text-gradient">questions?</span>
+        </h2>
+        <p class="reveal mt-6 text-lg text-[var(--text-tertiary)] max-w-2xl mx-auto leading-relaxed">
+          Our team is here to help. Whether you need a walkthrough, a custom demo, or just have a quick question — we'd love to hear from you.
+        </p>
+
+        <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+            Talk to Our Team
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 btn-secondary font-semibold text-base px-8 py-3.5 rounded-lg">
+            Book a Demo
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

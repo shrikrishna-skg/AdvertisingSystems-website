@@ -1,0 +1,229 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { vsPageFaqs } from '../../data/page-faqs';
+
+const breadcrumbs = [{ name: 'vs Google Ads', href: '/vs/google-ads' }];
+
+const features = [
+  { name: 'Multi-platform support', us: true, them: false },
+  { name: 'Cross-channel attribution', us: true, them: false },
+  { name: 'Unified budget management', us: true, them: false },
+  { name: 'AI audience discovery', us: true, them: 'partial' },
+  { name: 'OTA integration', us: true, them: false },
+  { name: 'Single dashboard for all channels', us: true, them: false },
+  { name: 'Google Ads management', us: true, them: true },
+  { name: 'Meta Ads management', us: true, them: false },
+  { name: 'Automated cross-channel reporting', us: true, them: false },
+  { name: 'AI bid optimization', us: true, them: 'partial' },
+];
+
+const advantages = [
+  {
+    title: 'Multi-Channel, Not Single-Channel',
+    desc: 'Google Ads only manages Google. AdvertisingSystems unifies Google, Meta, OTAs, and more into one intelligent platform.',
+    icon: 'multi',
+  },
+  {
+    title: 'Unified Analytics',
+    desc: 'Stop piecing together data from siloed platforms. Get cross-channel attribution and a single source of truth for all ad performance.',
+    icon: 'analytics',
+  },
+  {
+    title: 'AI Cross-Channel Optimization',
+    desc: 'Our AI shifts budgets across all channels in real time, not just within Google. Maximize ROAS across your entire ad portfolio.',
+    icon: 'ai',
+  },
+  {
+    title: 'OTA Integration Built In',
+    desc: 'For hospitality and travel businesses, AdvertisingSystems integrates OTA channels alongside paid ads for total visibility.',
+    icon: 'ota',
+  },
+];
+
+const comparisons = [
+  { label: 'Channel Coverage', us: 'Google, Meta, OTAs & more', them: 'Google only' },
+  { label: 'Analytics', us: 'Unified cross-channel attribution', them: 'Siloed Google-only data' },
+  { label: 'AI Optimization', us: 'Cross-channel AI optimization', them: 'Platform-limited Smart Bidding' },
+];
+---
+
+<Layout
+  title="AdvertisingSystems vs Google Ads Only | Compare"
+  description="Compare AdvertisingSystems with using Google Ads alone. See how multi-channel management, unified analytics, and cross-channel AI outperform single-platform tools."
+  breadcrumbs={breadcrumbs}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'AdvertisingSystems vs Google Ads Manager',
+    description: 'Compare AdvertisingSystems with using Google Ads alone. See how multi-channel management, unified analytics, and cross-channel AI outperform single-platform tools.',
+    url: 'https://advertisingsystems.ai/vs/google-ads',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'h2', '.glass']
+    }
+  }}
+>
+  <Navbar />
+  <Breadcrumb items={breadcrumbs} />
+  <main>
+    <!-- Hero -->
+    <section class="relative pt-40 pb-20 sm:pt-48 sm:pb-28 overflow-hidden">
+      <div class="mesh-gradient absolute inset-0"></div>
+      <div class="dot-grid absolute inset-0"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[var(--hero-glow)] rounded-full blur-[128px]"></div>
+
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="reveal inline-flex items-center gap-2 glass rounded-full px-5 py-2 mb-8">
+          <span class="w-2 h-2 bg-royal-green-400 rounded-full animate-pulse"></span>
+          <span class="text-sm font-medium text-[var(--text-tertiary)]">Comparison</span>
+        </div>
+
+        <h1 class="reveal text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
+          AdvertisingSystems vs <span class="text-gradient">Google Ads Only</span>
+        </h1>
+        <p class="reveal mt-6 text-lg sm:text-xl font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto leading-relaxed">
+          Google Ads is powerful for search, but your customers are everywhere. See why multi-channel beats single-channel.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Comparison Summary -->
+    <section class="py-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-6">
+          {comparisons.map((item) => (
+            <div class="reveal glass rounded-2xl p-6">
+              <p class="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-4">{item.label}</p>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-royal-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                  <span class="text-sm text-[var(--text-secondary)]">{item.us}</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-red-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                  <span class="text-sm text-[var(--text-muted)]">{item.them}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <!-- Feature Comparison Table -->
+    <section class="py-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="reveal text-3xl sm:text-4xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
+            Feature-by-feature <span class="text-gradient">comparison</span>
+          </h2>
+        </div>
+
+        <div class="reveal glass rounded-2xl overflow-hidden">
+          <div class="grid grid-cols-3 gap-0">
+            <div class="p-4 border-b border-[var(--border)] font-semibold text-[var(--text-primary)]">Feature</div>
+            <div class="p-4 border-b border-[var(--border)] text-center font-semibold text-royal-green-600">AdvertisingSystems</div>
+            <div class="p-4 border-b border-[var(--border)] text-center font-semibold text-[var(--text-muted)]">Google Ads</div>
+
+            {features.map((f) => (
+              <>
+                <div class="p-4 border-b border-[var(--border)] text-sm text-[var(--text-secondary)]">{f.name}</div>
+                <div class="p-4 border-b border-[var(--border)] flex justify-center">
+                  {f.us === true ? (
+                    <svg class="w-5 h-5 text-royal-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                  ) : (
+                    <svg class="w-5 h-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                  )}
+                </div>
+                <div class="p-4 border-b border-[var(--border)] flex justify-center">
+                  {f.them === true ? (
+                    <svg class="w-5 h-5 text-royal-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                  ) : f.them === 'partial' ? (
+                    <span class="text-xs font-medium text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full">Partial</span>
+                  ) : (
+                    <svg class="w-5 h-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                  )}
+                </div>
+              </>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <!-- Key Advantages -->
+    <section class="py-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="reveal text-3xl sm:text-4xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
+            Why go <span class="text-gradient">beyond Google Ads</span>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {advantages.map((adv) => (
+            <div class="reveal glass hover-glow rounded-2xl p-8">
+              <div class="w-12 h-12 rounded-xl bg-royal-green-500/10 text-royal-green-600 flex items-center justify-center mb-5">
+                {adv.icon === 'multi' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>
+                )}
+                {adv.icon === 'analytics' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
+                )}
+                {adv.icon === 'ai' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>
+                )}
+                {adv.icon === 'ota' && (
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /></svg>
+                )}
+              </div>
+              <h3 class="text-xl font-bold text-[var(--text-primary)] mb-2">{adv.title}</h3>
+              <p class="text-sm font-medium text-[var(--text-tertiary)] leading-relaxed">{adv.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <FAQSection title="Common questions" faqs={vsPageFaqs} name="vs-google-faq" />
+
+    <div class="section-line"></div>
+
+    <!-- CTA -->
+    <section class="relative py-32 overflow-hidden">
+      <div class="mesh-gradient absolute inset-0"></div>
+      <div class="dot-grid absolute inset-0"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[var(--hero-glow)] rounded-full blur-[128px]"></div>
+
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
+          Switch to <span class="text-gradient">AdvertisingSystems</span>
+        </h2>
+        <p class="reveal mt-6 text-lg font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto leading-relaxed">
+          Keep Google Ads in your stack, but manage it alongside every other channel from one AI-powered dashboard.
+        </p>
+        <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/signup" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+            Start Free Trial
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+          </a>
+          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 btn-secondary font-semibold text-base px-8 py-3.5 rounded-lg">
+            Book a Demo
+          </a>
+        </div>
+        <p class="reveal mt-6 text-sm font-medium text-[var(--text-muted)]">No credit card required &middot; 14-day free trial &middot; Cancel anytime</p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

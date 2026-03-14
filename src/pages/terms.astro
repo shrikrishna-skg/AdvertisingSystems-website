@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbs = [{ name: 'Terms of Service', href: '/terms' }];
+---
+
+<Layout
+  title="Terms of Service — AdvertisingSystems | Agreement & Use of Platform"
+  description="Terms and conditions for using AdvertisingSystems. Your rights, our obligations, and acceptable use."
+  breadcrumbs={breadcrumbs}
+>
+  <Navbar />
+  <Breadcrumb items={breadcrumbs} />
+  <main>
+    <!-- Hero -->
+    <section class="pt-36 pb-20 relative overflow-hidden">
+      <div class="absolute inset-0 mesh-gradient opacity-30"></div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center">
+          <h1 class="reveal text-4xl sm:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
+            Terms of <span class="text-gradient">Service</span>
+          </h1>
+          <p class="reveal mt-4 text-[var(--text-tertiary)]">Last updated: March 2026</p>
+          <p class="reveal mt-4 text-base font-medium text-[var(--text-secondary)] max-w-2xl mx-auto">
+            In short: by using AdvertisingSystems you agree to these terms. You can cancel anytime; we'll treat your data as described in our Privacy Policy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="pb-28">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+        <article class="reveal glass rounded-2xl p-8">
+          <h2 class="text-xl font-bold text-[var(--text-primary)] mb-4">1. Acceptance of Terms</h2>
+          <p class="text-[var(--text-tertiary)] leading-relaxed">
+            By accessing or using AdvertisingSystems (the "Service"), operated by Multisystems Inc., you agree to be bound by these Terms of Service. If you are using the Service on behalf of an organization, you represent that you have authority to bind that organization to these terms.
+          </p>
+        </article>
+
+        <article class="reveal glass rounded-2xl p-8">
+          <h2 class="text-xl font-bold text-[var(--text-primary)] mb-4">2. Service Description</h2>
+          <p class="text-[var(--text-tertiary)] leading-relaxed">
+            AdvertisingSystems is an AI-powered advertising management platform that enables users to manage, optimize, and analyze digital advertising campaigns across multiple channels including Google Ads, Meta Ads, Microsoft Ads, and online travel agencies. The Service includes campaign management tools, automated bidding, analytics dashboards, and integration capabilities.
+          </p>
+        </article>
+
+        <article class="reveal glass rounded-2xl p-8">
+          <h2 class="text-xl font-bold text-[var(--text-primary)] mb-4">3. User Obligations</h2>
+          <ul class="space-y-2 text-[var(--text-tertiary)] list-disc list-inside">
+            <li>Provide accurate and complete registration information.</li>
+            <li>Maintain the confidentiality of your account credentials.</li>
+            <li>Comply with all applicable advertising platform policies and regulations.</li>
+            <li>Not use the Service for any unlawful, fraudulent, or harmful purpose.</li>
+            <li>Not attempt to reverse-engineer, decompile, or access the source code of the platform.</li>
+            <li>Not exceed authorized usage limits or abuse API access.</li>
+          </ul>
+        </article>
+
+        <article class="reveal glass rounded-2xl p-8">
+          <h2 class="text-xl font-bold text-[var(--text-primary)] mb-4">4. Payment Terms</h2>
+          <p class="text-[var(--text-tertiary)] leading-relaxed mb-3">
+            Paid subscriptions are billed monthly or annually in advance. All fees are non-refundable except where required by law. Key payment terms:
+          </p>
+          <ul class="space-y-2 text-[var(--text-tertiary)] list-disc list-inside">
+            <li>Prices are in USD and exclude applicable taxes.</li>
+            <li>We may adjust pricing with 30 days' prior notice.</li>
+            <li>Failed payments may result in service suspension after a 7-day grace period.</li>
+            <li>Free trial users will not be charged unless they upgrade to a paid plan.</li>
+          </ul>
+        </article>
+
+        <article class="reveal glass rounded-2xl p-8">
+          <h2 class="text-xl font-bold text-[var(--text-primary)] mb-4">5. Limitation of Liability</h2>
+          <p class="text-[var(--text-tertiary)] leading-relaxed">
+            To the maximum extent permitted by law, Multisystems Inc. shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Service. Our total aggregate liability shall not exceed the amount you paid for the Service in the twelve months preceding the claim. The Service is provided "as is" without warranties of any kind, express or implied.
+          </p>
+        </article>
+
+        <article class="reveal glass rounded-2xl p-8">
+          <h2 class="text-xl font-bold text-[var(--text-primary)] mb-4">6. Termination</h2>
+          <p class="text-[var(--text-tertiary)] leading-relaxed mb-3">
+            Either party may terminate the agreement at any time:
+          </p>
+          <ul class="space-y-2 text-[var(--text-tertiary)] list-disc list-inside">
+            <li>You may cancel your subscription through your account settings. Cancellation takes effect at the end of your current billing period.</li>
+            <li>We may suspend or terminate your access for violation of these terms, with notice where practicable.</li>
+            <li>Upon termination, you may export your data within 30 days. After that period, we may delete your data in accordance with our retention policies.</li>
+          </ul>
+        </article>
+
+        <article class="reveal glass rounded-2xl p-8">
+          <h2 class="text-xl font-bold text-[var(--text-primary)] mb-4">7. Contact</h2>
+          <p class="text-[var(--text-tertiary)] leading-relaxed">
+            Questions about these terms? Contact us at
+            <a href="mailto:legal@advertisingsystems.ai" class="text-royal-green-600 hover:text-royal-green-500 transition-colors font-semibold">legal@advertisingsystems.ai</a>.
+          </p>
+        </article>
+
+        <div class="reveal mt-12 pt-12 border-t border-[var(--border)] text-center">
+          <p class="text-[var(--text-secondary)] font-medium mb-2">General questions about the product or your account?</p>
+          <a href="/faq" class="text-royal-green-600 font-semibold hover:text-royal-green-500 transition-colors">View our FAQ</a>
+          <span class="text-[var(--text-muted)]"> or </span>
+          <a href="/contact" class="text-royal-green-600 font-semibold hover:text-royal-green-500 transition-colors">contact us</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

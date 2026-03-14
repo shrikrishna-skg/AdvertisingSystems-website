@@ -1,0 +1,353 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { featureSubpageFaqs } from '../../data/page-faqs';
+
+const painPoints = [
+  {
+    icon: 'M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M21.015 4.356v4.992',
+    title: 'Repetitive Manual Tasks',
+    desc: 'Pausing underperformers, adjusting budgets, updating bids, rotating creatives — the same tasks every day, stealing hours from strategic work.',
+  },
+  {
+    icon: 'M3 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 010 1.954l-7.108 4.061A1.125 1.125 0 013 16.811V8.69zM12.75 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 010 1.954l-7.108 4.061a1.125 1.125 0 01-1.683-.977V8.69z',
+    title: 'Slow Reaction to Performance Drops',
+    desc: "By the time you notice a campaign tanking, it's burned through hundreds or thousands in budget. Manual monitoring can't keep up with real-time changes.",
+  },
+  {
+    icon: 'M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z',
+    title: 'Night & Weekend Gaps',
+    desc: "Your campaigns run 24/7 but your team doesn't. Performance issues at 2am on a Saturday go unchecked until Monday morning.",
+  },
+];
+
+const capabilities = [
+  {
+    icon: 'M11.42 15.17l-5.648-3.015A2.25 2.25 0 013 10.055V6.838a2.25 2.25 0 011.172-1.972l5.648-3.015a2.25 2.25 0 012.36 0l5.648 3.015A2.25 2.25 0 0121 6.838v3.217a2.25 2.25 0 01-1.172 1.972l-5.648 3.015a2.25 2.25 0 01-2.36 0z',
+    title: 'Rule Builder',
+    desc: 'Visual drag-and-drop rule creation. Set conditions based on any metric — CPA, ROAS, spend, impressions — and define the actions to execute.',
+  },
+  {
+    icon: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z',
+    title: 'Trigger Actions',
+    desc: 'Automated responses to performance changes: pause campaigns, adjust bids, shift budgets, send alerts — all executing in seconds, not hours.',
+  },
+  {
+    icon: 'M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5',
+    title: 'Scheduling Engine',
+    desc: 'Time-based campaign actions: dayparting, weekly budget cycles, seasonal adjustments, and scheduled launches — all running on autopilot.',
+  },
+  {
+    icon: 'M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0',
+    title: 'Alert System',
+    desc: 'Customizable notifications via email, Slack, or SMS when rules trigger. Always know what happened, why, and what was done about it.',
+  },
+];
+
+const relatedFeatures = [
+  { title: 'Campaign Intelligence', href: '/features/campaign-management', stat: '14 campaigns in 20min' },
+  { title: 'AI Optimization Engine', href: '/features/ai-optimization', stat: '40% lower CPA' },
+  { title: 'Performance Analytics', href: '/features/analytics', stat: '$180K attributed' },
+  { title: 'Budget Allocator', href: '/features/budget-intelligence', stat: '5.2x ROAS' },
+];
+---
+
+<Layout
+  breadcrumbs={[{ name: 'Features', href: '/features' }, { name: 'Automation Studio', href: '/features/automation' }]}
+  title="Automation Studio — AdvertisingSystems | Rules-Based Campaign Automation"
+  description="Set the rules. Let the system run. Rules-based campaign automation that saves 12 hours per week on repetitive tasks."
+>
+  <Navbar />
+  <Breadcrumb items={[{ name: 'Features', href: '/features' }, { name: 'Automation Studio', href: '/features/automation' }]} />
+  <main>
+    <!-- Hero -->
+    <section class="relative pt-40 pb-20 sm:pt-48 sm:pb-28 overflow-hidden" aria-labelledby="automation-heading">
+      <div class="mesh-gradient absolute inset-0"></div>
+      <div class="dot-grid absolute inset-0"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[var(--hero-glow)] rounded-full blur-[128px]"></div>
+
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="reveal inline-flex items-center gap-2 glass rounded-full px-5 py-2 mb-8">
+          <span class="w-2 h-2 bg-royal-green-400 rounded-full animate-pulse"></span>
+          <span class="text-sm font-medium text-[var(--text-tertiary)]">12 hours saved per week</span>
+        </div>
+
+        <h1 id="automation-heading" class="reveal text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
+          Automation <span class="text-gradient">Studio</span>
+        </h1>
+        <p class="reveal mt-4 text-xl sm:text-2xl text-[var(--text-secondary)] font-medium">
+          Set the rules. Let the system run.
+        </p>
+        <p class="reveal mt-6 text-lg font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto leading-relaxed">
+          Build rules that automatically manage your campaigns around the clock. Define conditions, triggers, and actions — then focus on strategy while the system executes.
+        </p>
+        <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+            See It In Action
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <!-- Pain Points -->
+    <section class="py-28" aria-labelledby="pain-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 id="pain-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
+            Sound <span class="text-gradient">familiar?</span>
+          </h2>
+          <p class="reveal mt-4 text-lg font-medium text-[var(--text-tertiary)] max-w-xl mx-auto">The repetitive work draining your team's bandwidth.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {painPoints.map((point) => (
+            <div class="reveal glass hover-glow rounded-2xl p-8 border-t-4 border-red-400/30">
+              <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
+                <svg class="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={point.icon} />
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-[var(--text-primary)] mb-2">{point.title}</h3>
+              <p class="text-sm font-medium text-[var(--text-tertiary)] leading-relaxed">{point.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <!-- App Mockup -->
+    <section class="py-28" aria-labelledby="mockup-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 id="mockup-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
+            If this, then <span class="text-gradient">that.</span> Automatically.
+          </h2>
+        </div>
+
+        <div class="reveal glass rounded-2xl overflow-hidden shadow-2xl">
+          <div class="flex items-center gap-2 px-5 py-3.5 border-b border-[var(--browser-border)] bg-[var(--browser-chrome-bg)]">
+            <div class="flex gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-[var(--browser-dot)]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[var(--browser-dot)]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[var(--browser-dot)]"></span>
+            </div>
+            <div class="flex-1 ml-3">
+              <div class="bg-[var(--browser-url-bg)] rounded-md px-3 py-1 text-xs text-[var(--browser-url-text)] max-w-xs">app.advertisingsystems.ai/automation</div>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 bg-[var(--surface-alt)]">
+            <!-- Active Rules Summary -->
+            <div class="grid grid-cols-3 gap-4 mb-6">
+              <div class="glass rounded-lg p-4 text-center">
+                <div class="text-xs text-[var(--text-muted)] mb-1">Active Rules</div>
+                <div class="text-2xl font-bold text-royal-green-500">18</div>
+              </div>
+              <div class="glass rounded-lg p-4 text-center">
+                <div class="text-xs text-[var(--text-muted)] mb-1">Actions Today</div>
+                <div class="text-2xl font-bold text-[var(--text-primary)]">47</div>
+              </div>
+              <div class="glass rounded-lg p-4 text-center">
+                <div class="text-xs text-[var(--text-muted)] mb-1">Time Saved</div>
+                <div class="text-2xl font-bold text-royal-green-500">12h</div>
+              </div>
+            </div>
+            <!-- Automation Rules -->
+            <div class="space-y-3">
+              <div class="glass rounded-lg p-5">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 bg-royal-green-400 rounded-full"></span>
+                    <span class="text-sm font-semibold text-[var(--text-primary)]">Pause High-CPA Campaigns</span>
+                  </div>
+                  <span class="text-xs font-semibold bg-royal-green-500/10 text-royal-green-500 px-2.5 py-1 rounded-full">Active</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs flex-wrap">
+                  <div class="glass rounded-md px-3 py-1.5 text-[var(--text-tertiary)]">
+                    <span class="font-semibold text-amber-500">IF</span> CPA &gt; $25
+                  </div>
+                  <svg class="w-4 h-4 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                  <div class="glass rounded-md px-3 py-1.5 text-[var(--text-tertiary)]">
+                    <span class="font-semibold text-amber-500">AND</span> Spend &gt; $200
+                  </div>
+                  <svg class="w-4 h-4 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                  <div class="glass rounded-md px-3 py-1.5 text-[var(--text-tertiary)]">
+                    <span class="font-semibold text-royal-green-500">THEN</span> Pause campaign
+                  </div>
+                </div>
+                <div class="mt-3 text-xs text-[var(--text-muted)]">Triggered 3 times today &middot; Last: 2 hours ago &middot; All platforms</div>
+              </div>
+
+              <div class="glass rounded-lg p-5">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 bg-royal-green-400 rounded-full"></span>
+                    <span class="text-sm font-semibold text-[var(--text-primary)]">Scale Winners</span>
+                  </div>
+                  <span class="text-xs font-semibold bg-royal-green-500/10 text-royal-green-500 px-2.5 py-1 rounded-full">Active</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs flex-wrap">
+                  <div class="glass rounded-md px-3 py-1.5 text-[var(--text-tertiary)]">
+                    <span class="font-semibold text-amber-500">IF</span> ROAS &gt; 5x
+                  </div>
+                  <svg class="w-4 h-4 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                  <div class="glass rounded-md px-3 py-1.5 text-[var(--text-tertiary)]">
+                    <span class="font-semibold text-amber-500">AND</span> Conv. &gt; 10
+                  </div>
+                  <svg class="w-4 h-4 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                  <div class="glass rounded-md px-3 py-1.5 text-[var(--text-tertiary)]">
+                    <span class="font-semibold text-royal-green-500">THEN</span> Increase budget 20%
+                  </div>
+                </div>
+                <div class="mt-3 text-xs text-[var(--text-muted)]">Triggered 5 times today &middot; Last: 45 min ago &middot; Google Ads, Meta</div>
+              </div>
+
+              <div class="glass rounded-lg p-5">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 bg-royal-green-400 rounded-full"></span>
+                    <span class="text-sm font-semibold text-[var(--text-primary)]">Weekend Budget Guard</span>
+                  </div>
+                  <span class="text-xs font-semibold bg-royal-green-500/10 text-royal-green-500 px-2.5 py-1 rounded-full">Active</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs flex-wrap">
+                  <div class="glass rounded-md px-3 py-1.5 text-[var(--text-tertiary)]">
+                    <span class="font-semibold text-amber-500">IF</span> Day = Sat/Sun
+                  </div>
+                  <svg class="w-4 h-4 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                  <div class="glass rounded-md px-3 py-1.5 text-[var(--text-tertiary)]">
+                    <span class="font-semibold text-amber-500">AND</span> CPA rises 30%+
+                  </div>
+                  <svg class="w-4 h-4 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                  <div class="glass rounded-md px-3 py-1.5 text-[var(--text-tertiary)]">
+                    <span class="font-semibold text-royal-green-500">THEN</span> Reduce budget 50% + alert
+                  </div>
+                </div>
+                <div class="mt-3 text-xs text-[var(--text-muted)]">Triggered 1 time this week &middot; Last: Saturday 3:14 AM &middot; All platforms</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <!-- Capabilities -->
+    <section class="py-28" aria-labelledby="capabilities-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 id="capabilities-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
+            Key <span class="text-gradient">capabilities</span>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {capabilities.map((cap) => (
+            <div class="reveal glass hover-glow rounded-2xl p-8">
+              <div class="w-12 h-12 rounded-xl bg-royal-green-500/10 flex items-center justify-center mb-5">
+                <svg class="w-6 h-6 text-royal-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={cap.icon} />
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-[var(--text-primary)] mb-2">{cap.title}</h3>
+              <p class="text-sm text-[var(--text-tertiary)] leading-relaxed">{cap.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <!-- Testimonial -->
+    <section class="py-28" aria-labelledby="testimonial-heading">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="reveal glass rounded-2xl p-10 sm:p-14">
+          <svg class="w-10 h-10 text-royal-green-500/30 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
+          </svg>
+          <blockquote>
+            <p id="testimonial-heading" class="text-xl sm:text-2xl font-medium text-[var(--text-primary)] leading-relaxed">
+              "I set up 18 automation rules on a Friday. By Monday, the system had caught and fixed 3 performance issues that would have cost us $4,000."
+            </p>
+          </blockquote>
+          <div class="mt-8">
+            <div class="font-semibold text-[var(--text-primary)]">Lena Kowalski</div>
+            <div class="text-sm text-[var(--text-muted)]">Paid Media Manager, Alpine Retreats</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <!-- Related Features -->
+    <section class="py-28" aria-labelledby="related-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 id="related-heading" class="reveal text-3xl sm:text-4xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
+            Explore more <span class="text-gradient">features</span>
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {relatedFeatures.map((feature) => (
+            <a href={feature.href} class="reveal group glass hover-glow rounded-2xl p-6 transition-all duration-300 block">
+              <h3 class="text-base font-bold text-[var(--text-primary)] mb-2 group-hover:text-royal-green-600 transition-colors">{feature.title}</h3>
+              <span class="text-xs font-semibold bg-royal-green-500/10 text-royal-green-600 px-2.5 py-1 rounded-full">{feature.stat}</span>
+              <div class="mt-4">
+                <svg class="w-5 h-5 text-[var(--text-muted)] group-hover:text-royal-green-500 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <FAQSection title="Common questions" faqs={featureSubpageFaqs} name="automation-faq" />
+
+    <div class="section-line"></div>
+
+    <!-- CTA -->
+    <section class="relative py-32 overflow-hidden" aria-labelledby="cta-heading">
+      <div class="mesh-gradient absolute inset-0"></div>
+      <div class="dot-grid absolute inset-0"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[var(--hero-glow)] rounded-full blur-[128px]"></div>
+
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 id="cta-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
+          Automate the work you <span class="text-gradient">shouldn't be doing.</span>
+        </h2>
+        <p class="reveal mt-6 text-lg font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto leading-relaxed">
+          See how Automation Studio can save your team 12+ hours per week on campaign management tasks.
+        </p>
+        <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+            Book Your Demo
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+          <a href="/signup" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 btn-secondary font-semibold text-base px-8 py-3.5 rounded-lg">
+            Start Free Trial
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

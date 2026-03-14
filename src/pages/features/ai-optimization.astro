@@ -1,0 +1,350 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import { featureSubpageFaqs } from '../../data/page-faqs';
+
+const painPoints = [
+  {
+    icon: 'M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75',
+    title: 'Manual Bidding Guesswork',
+    desc: 'Adjusting bids by gut feel across hundreds of keywords and audiences. You\'re always a step behind the market — and leaving money on the table.',
+  },
+  {
+    icon: 'M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z',
+    title: 'Budget Sitting in Dying Campaigns',
+    desc: 'Underperforming campaigns keep burning cash while top performers are budget-capped. By the time you notice, thousands are wasted.',
+  },
+  {
+    icon: 'M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z',
+    title: 'Hidden Audiences',
+    desc: 'Profitable audience segments exist in your data but stay undiscovered. Manual analysis can\'t keep up with the signals across millions of impressions.',
+  },
+];
+
+const capabilities = [
+  {
+    icon: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z',
+    title: 'Autonomous Bidding',
+    desc: 'AI adjusts bids in real time across every keyword, audience, and placement — 24/7, faster than any human could react.',
+  },
+  {
+    icon: 'M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5',
+    title: 'Smart Budget Reallocation',
+    desc: 'Automatically shifts budget from underperformers to top-performing campaigns. No manual intervention needed.',
+  },
+  {
+    icon: 'M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z',
+    title: 'Audience Discovery',
+    desc: 'ML models surface high-converting audience segments you never knew existed — from 50,000+ behavioral data points.',
+  },
+  {
+    icon: 'M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605',
+    title: 'Predictive Forecasting',
+    desc: 'See projected performance before you commit budget. AI models predict CPA, ROAS, and conversion volume 14 days ahead.',
+  },
+];
+
+const relatedFeatures = [
+  { title: 'Campaign Intelligence', href: '/features/campaign-management', stat: '14 campaigns in 20min' },
+  { title: 'Performance Analytics', href: '/features/analytics', stat: '$180K attributed' },
+  { title: 'Automation Studio', href: '/features/automation', stat: '12hrs saved/week' },
+  { title: 'Budget Allocator', href: '/features/budget-intelligence', stat: '5.2x ROAS' },
+];
+---
+
+<Layout
+  breadcrumbs={[{ name: 'Features', href: '/features' }, { name: 'AI Optimization', href: '/features/ai-optimization' }]}
+  title="AI Optimization Engine — AdvertisingSystems | Autonomous Campaign Optimization"
+  description="Your campaigns optimize themselves. Autonomous bidding, smart budget reallocation, and audience discovery powered by machine learning."
+>
+  <Navbar />
+  <Breadcrumb items={[{ name: 'Features', href: '/features' }, { name: 'AI Optimization', href: '/features/ai-optimization' }]} />
+  <main>
+    <!-- Hero -->
+    <section class="relative pt-40 pb-20 sm:pt-48 sm:pb-28 overflow-hidden" aria-labelledby="ai-heading">
+      <div class="mesh-gradient absolute inset-0"></div>
+      <div class="dot-grid absolute inset-0"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[var(--hero-glow)] rounded-full blur-[128px]"></div>
+
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="reveal inline-flex items-center gap-2 glass rounded-full px-5 py-2 mb-8">
+          <span class="w-2 h-2 bg-royal-green-400 rounded-full animate-pulse"></span>
+          <span class="text-sm font-medium text-[var(--text-tertiary)]">40% lower CPA in week one</span>
+        </div>
+
+        <h1 id="ai-heading" class="reveal text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
+          AI Optimization <span class="text-gradient">Engine</span>
+        </h1>
+        <p class="reveal mt-4 text-xl sm:text-2xl text-[var(--text-secondary)] font-medium">
+          Your campaigns optimize themselves.
+        </p>
+        <p class="reveal mt-6 text-lg text-[var(--text-tertiary)] max-w-2xl mx-auto leading-relaxed">
+          Machine learning that analyzes 50,000+ data points per campaign to autonomously adjust bids, reallocate budgets, and discover hidden audiences — around the clock.
+        </p>
+        <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+            See It In Action
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <!-- Pain Points -->
+    <section class="py-28" aria-labelledby="pain-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 id="pain-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
+            Sound <span class="text-gradient">familiar?</span>
+          </h2>
+          <p class="reveal mt-4 text-lg text-[var(--text-tertiary)] max-w-xl mx-auto">The optimization challenges eating your margins.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {painPoints.map((point) => (
+            <div class="reveal glass hover-glow rounded-2xl p-8 border-t-4 border-red-400/30">
+              <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-5">
+                <svg class="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={point.icon} />
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-[var(--text-primary)] mb-2">{point.title}</h3>
+              <p class="text-sm text-[var(--text-tertiary)] leading-relaxed">{point.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <!-- App Mockup -->
+    <section class="py-28" aria-labelledby="mockup-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 id="mockup-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
+            AI that works <span class="text-gradient">while you sleep.</span>
+          </h2>
+        </div>
+
+        <div class="reveal glass rounded-2xl overflow-hidden shadow-2xl">
+          <div class="flex items-center gap-2 px-5 py-3.5 border-b border-[var(--browser-border)] bg-[var(--browser-chrome-bg)]">
+            <div class="flex gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-[var(--browser-dot)]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[var(--browser-dot)]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[var(--browser-dot)]"></span>
+            </div>
+            <div class="flex-1 ml-3">
+              <div class="bg-[var(--browser-url-bg)] rounded-md px-3 py-1 text-xs text-[var(--browser-url-text)] max-w-xs">app.advertisingsystems.ai/optimization</div>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 bg-[var(--surface-alt)]">
+            <!-- AI Status Bar -->
+            <div class="glass rounded-lg p-4 mb-6 flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-royal-green-500/20 flex items-center justify-center">
+                <span class="w-3 h-3 bg-royal-green-400 rounded-full animate-pulse"></span>
+              </div>
+              <div class="flex-1">
+                <div class="text-sm font-semibold text-[var(--text-primary)]">AI Engine Active</div>
+                <div class="text-xs text-[var(--text-muted)]">Last optimization: 3 minutes ago &middot; 847 adjustments today</div>
+              </div>
+              <span class="text-xs font-semibold bg-royal-green-500/10 text-royal-green-500 px-3 py-1 rounded-full">Autonomous Mode</span>
+            </div>
+            <!-- Suggestions List -->
+            <div class="space-y-3 mb-6">
+              <div class="glass rounded-lg p-4">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="w-1.5 h-1.5 bg-royal-green-400 rounded-full"></span>
+                      <span class="text-xs font-semibold text-royal-green-500 uppercase">Auto-Applied</span>
+                    </div>
+                    <div class="text-sm font-medium text-[var(--text-primary)]">Bid increase on "hotel deals europe" — CPA dropped 22%</div>
+                    <div class="text-xs text-[var(--text-muted)] mt-1">Google Ads &middot; Summer Brand Push &middot; 14 min ago</div>
+                  </div>
+                  <div class="text-right shrink-0">
+                    <div class="text-sm font-bold text-royal-green-500">-22% CPA</div>
+                    <div class="text-xs text-[var(--text-muted)]">$12.40 &rarr; $9.67</div>
+                  </div>
+                </div>
+              </div>
+              <div class="glass rounded-lg p-4">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="w-1.5 h-1.5 bg-royal-green-400 rounded-full"></span>
+                      <span class="text-xs font-semibold text-royal-green-500 uppercase">Auto-Applied</span>
+                    </div>
+                    <div class="text-sm font-medium text-[var(--text-primary)]">Budget shifted $340 from "Q1 Search" to "Retargeting — Cart"</div>
+                    <div class="text-xs text-[var(--text-muted)] mt-1">Cross-Platform &middot; Budget Reallocation &middot; 47 min ago</div>
+                  </div>
+                  <div class="text-right shrink-0">
+                    <div class="text-sm font-bold text-royal-green-500">+18% ROAS</div>
+                    <div class="text-xs text-[var(--text-muted)]">4.2x &rarr; 4.9x</div>
+                  </div>
+                </div>
+              </div>
+              <div class="glass rounded-lg p-4">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                      <span class="text-xs font-semibold text-blue-500 uppercase">Suggestion</span>
+                    </div>
+                    <div class="text-sm font-medium text-[var(--text-primary)]">New audience segment found: "Luxury travel, 35-54, mobile"</div>
+                    <div class="text-xs text-[var(--text-muted)] mt-1">Meta Ads &middot; Audience Discovery &middot; 2 hrs ago</div>
+                  </div>
+                  <div class="text-right shrink-0">
+                    <div class="text-sm font-bold text-blue-500">+340 est. conv.</div>
+                    <div class="text-xs text-[var(--text-muted)]">High confidence</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Performance Impact -->
+            <div class="grid grid-cols-3 gap-4">
+              <div class="glass rounded-lg p-4 text-center">
+                <div class="text-xs text-[var(--text-muted)] mb-1">CPA Reduction</div>
+                <div class="text-2xl font-bold text-royal-green-500">-40%</div>
+                <div class="mt-2 h-2 rounded-full bg-[var(--progress-track)] overflow-hidden">
+                  <div class="h-full rounded-full bg-gradient-to-r from-[var(--bar-fill-from)] to-[var(--bar-fill-to)]" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="glass rounded-lg p-4 text-center">
+                <div class="text-xs text-[var(--text-muted)] mb-1">Budget Efficiency</div>
+                <div class="text-2xl font-bold text-royal-green-500">+38%</div>
+                <div class="mt-2 h-2 rounded-full bg-[var(--progress-track)] overflow-hidden">
+                  <div class="h-full rounded-full bg-gradient-to-r from-[var(--bar-fill-from)] to-[var(--bar-fill-to)]" style="width: 72%"></div>
+                </div>
+              </div>
+              <div class="glass rounded-lg p-4 text-center">
+                <div class="text-xs text-[var(--text-muted)] mb-1">New Audiences</div>
+                <div class="text-2xl font-bold text-royal-green-500">12</div>
+                <div class="mt-2 h-2 rounded-full bg-[var(--progress-track)] overflow-hidden">
+                  <div class="h-full rounded-full bg-gradient-to-r from-[var(--bar-fill-from)] to-[var(--bar-fill-to)]" style="width: 60%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <!-- Capabilities -->
+    <section class="py-28" aria-labelledby="capabilities-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 id="capabilities-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
+            Key <span class="text-gradient">capabilities</span>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {capabilities.map((cap) => (
+            <div class="reveal glass hover-glow rounded-2xl p-8">
+              <div class="w-12 h-12 rounded-xl bg-royal-green-500/10 flex items-center justify-center mb-5">
+                <svg class="w-6 h-6 text-royal-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={cap.icon} />
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-[var(--text-primary)] mb-2">{cap.title}</h3>
+              <p class="text-sm text-[var(--text-tertiary)] leading-relaxed">{cap.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <!-- Testimonial -->
+    <section class="py-28" aria-labelledby="testimonial-heading">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="reveal glass rounded-2xl p-10 sm:p-14">
+          <svg class="w-10 h-10 text-royal-green-500/30 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
+          </svg>
+          <blockquote>
+            <p id="testimonial-heading" class="text-xl sm:text-2xl font-medium text-[var(--text-primary)] leading-relaxed">
+              "In the first week, the AI cut our cost-per-acquisition by 40%. We didn't change a single setting — it just figured it out."
+            </p>
+          </blockquote>
+          <div class="mt-8">
+            <div class="font-semibold text-[var(--text-primary)]">Sarah Chen</div>
+            <div class="text-sm text-[var(--text-muted)]">VP of Digital Marketing, Horizon Hospitality Group</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <!-- Related Features -->
+    <section class="py-28" aria-labelledby="related-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 id="related-heading" class="reveal text-3xl sm:text-4xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
+            Explore more <span class="text-gradient">features</span>
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {relatedFeatures.map((feature) => (
+            <a href={feature.href} class="reveal group glass hover-glow rounded-2xl p-6 transition-all duration-300 block">
+              <h3 class="text-base font-bold text-[var(--text-primary)] mb-2 group-hover:text-royal-green-600 transition-colors">{feature.title}</h3>
+              <span class="text-xs font-semibold bg-royal-green-500/10 text-royal-green-600 px-2.5 py-1 rounded-full">{feature.stat}</span>
+              <div class="mt-4">
+                <svg class="w-5 h-5 text-[var(--text-muted)] group-hover:text-royal-green-500 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line"></div>
+
+    <FAQSection title="Common questions" faqs={featureSubpageFaqs} name="ai-faq" />
+
+    <div class="section-line"></div>
+
+    <!-- CTA -->
+    <section class="relative py-32 overflow-hidden" aria-labelledby="cta-heading">
+      <div class="mesh-gradient absolute inset-0"></div>
+      <div class="dot-grid absolute inset-0"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[var(--hero-glow)] rounded-full blur-[128px]"></div>
+
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 id="cta-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
+          Let AI optimize your <span class="text-gradient">ad spend.</span>
+        </h2>
+        <p class="reveal mt-6 text-lg text-[var(--text-tertiary)] max-w-2xl mx-auto leading-relaxed">
+          See how the AI Optimization Engine can reduce your CPA and discover untapped audiences automatically.
+        </p>
+        <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+            Book Your Demo
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+          <a href="/signup" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 btn-secondary font-semibold text-base px-8 py-3.5 rounded-lg">
+            Start Free Trial
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

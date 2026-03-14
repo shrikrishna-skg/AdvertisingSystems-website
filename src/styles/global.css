@@ -1,0 +1,423 @@
+@import "tailwindcss";
+
+@theme {
+  /* Emerald — Advertising Systems primary (Multisystems #21B081) */
+  --color-royal-green-50: #ecfdf5;
+  --color-royal-green-100: #d1fae5;
+  --color-royal-green-200: #a7f3d0;
+  --color-royal-green-300: #6ee7b7;
+  --color-royal-green-400: #34d399;
+  --color-royal-green-500: #21b081;
+  --color-royal-green-600: #1a9b6e;
+  --color-royal-green-700: #15865a;
+  --color-royal-green-800: #0f7049;
+  --color-royal-green-900: #0c5a3a;
+  --color-royal-green-950: #063d26;
+
+  /* Blue — Reputation Systems secondary (Multisystems #3283F0) */
+  --color-royal-blue-50: #eff6ff;
+  --color-royal-blue-100: #dbeafe;
+  --color-royal-blue-200: #bfdbfe;
+  --color-royal-blue-300: #93c5fd;
+  --color-royal-blue-400: #60a5fa;
+  --color-royal-blue-500: #3283f0;
+  --color-royal-blue-600: #2563eb;
+  --color-royal-blue-700: #1d4ed8;
+  --color-royal-blue-800: #1e40af;
+  --color-royal-blue-900: #1e3a8a;
+  --color-royal-blue-950: #172554;
+
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* ── Theme System (CSS Custom Properties) ──────── */
+/* Light mode (default — enterprise standard) */
+:root {
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --surface-raised: #ffffff;
+  --surface-overlay: rgba(255, 255, 255, 0.95);
+  --surface-glass: rgba(255, 255, 255, 0.7);
+  --surface-glass-strong: rgba(255, 255, 255, 0.85);
+  --surface-glass-border: rgba(0, 0, 0, 0.06);
+  --surface-glass-border-hover: rgba(33, 176, 129, 0.25);
+  --surface-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --surface-card-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.04);
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #475569;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+
+  --border: #e2e8f0;
+  --border-subtle: #f1f5f9;
+
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-border: rgba(0, 0, 0, 0.06);
+
+  --hero-glow: rgba(33, 176, 129, 0.06);
+  --dot-grid-color: rgba(0, 0, 0, 0.04);
+  --mesh-c1: rgba(33, 176, 129, 0.06);
+  --mesh-c2: rgba(21, 134, 86, 0.04);
+  --mesh-c3: rgba(12, 90, 58, 0.03);
+
+  --footer-bg: #0f172a;
+  --footer-text: #f8fafc;
+  --footer-text-muted: rgba(255, 255, 255, 0.55);
+  --footer-text-faint: rgba(255, 255, 255, 0.35);
+  --footer-border: rgba(255, 255, 255, 0.06);
+
+  --bar-fill-from: rgba(33, 176, 129, 0.15);
+  --bar-fill-to: rgba(33, 176, 129, 0.6);
+  --bar-fill-to-strong: #21b081;
+
+  --browser-chrome-bg: #f8fafc;
+  --browser-dot: #e2e8f0;
+  --browser-url-bg: #f1f5f9;
+  --browser-url-text: #94a3b8;
+  --browser-border: #e2e8f0;
+
+  --badge-glow: rgba(33, 176, 129, 0.08);
+  --mockup-inner-bg: rgba(248, 250, 252, 0.6);
+  --progress-track: #e2e8f0;
+
+  --section-line-color: rgba(33, 176, 129, 0.15);
+
+  color-scheme: light;
+}
+
+/* Dark mode — toggled via checkbox */
+html:has(#dark-mode-toggle:checked) {
+  --surface: #050a0e;
+  --surface-alt: #0a1118;
+  --surface-raised: #0f1923;
+  --surface-overlay: rgba(5, 10, 14, 0.95);
+  --surface-glass: rgba(255, 255, 255, 0.03);
+  --surface-glass-strong: rgba(255, 255, 255, 0.05);
+  --surface-glass-border: rgba(255, 255, 255, 0.06);
+  --surface-glass-border-hover: rgba(33, 176, 129, 0.3);
+  --surface-card-shadow: none;
+  --surface-card-shadow-hover: none;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-muted: #64748b;
+  --text-faint: rgba(255, 255, 255, 0.35);
+
+  --border: rgba(255, 255, 255, 0.06);
+  --border-subtle: rgba(255, 255, 255, 0.03);
+
+  --nav-bg: rgba(5, 10, 14, 0.8);
+  --nav-border: rgba(255, 255, 255, 0.06);
+
+  --hero-glow: rgba(33, 176, 129, 0.07);
+  --dot-grid-color: rgba(255, 255, 255, 0.04);
+  --mesh-c1: rgba(33, 176, 129, 0.15);
+  --mesh-c2: rgba(21, 134, 86, 0.08);
+  --mesh-c3: rgba(12, 90, 58, 0.2);
+
+  --footer-bg: #030608;
+  --footer-text: #f8fafc;
+  --footer-text-muted: rgba(255, 255, 255, 0.55);
+  --footer-text-faint: rgba(255, 255, 255, 0.35);
+  --footer-border: rgba(255, 255, 255, 0.06);
+
+  --bar-fill-from: rgba(33, 176, 129, 0.4);
+  --bar-fill-to: rgba(33, 176, 129, 0.8);
+  --bar-fill-to-strong: #1a9b6e;
+
+  --browser-chrome-bg: rgba(255, 255, 255, 0.02);
+  --browser-dot: rgba(255, 255, 255, 0.1);
+  --browser-url-bg: rgba(255, 255, 255, 0.04);
+  --browser-url-text: rgba(255, 255, 255, 0.2);
+  --browser-border: rgba(255, 255, 255, 0.06);
+
+  --badge-glow: rgba(33, 176, 129, 0.15);
+  --mockup-inner-bg: rgba(255, 255, 255, 0.03);
+  --progress-track: rgba(255, 255, 255, 0.06);
+
+  --section-line-color: rgba(33, 176, 129, 0.2);
+
+  color-scheme: dark;
+}
+
+/* ── Base ─────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--surface);
+  color: var(--text-secondary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  min-width: 320px;
+}
+
+/* ── Responsive: safe container padding ───────────── */
+.container-padding {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+/* ── Responsive: fluid heading (scale with viewport) ─ */
+.hero-title {
+  font-size: clamp(1.875rem, 5vw + 1rem, 3.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 640px) {
+  .hero-title { font-size: clamp(2.25rem, 4vw + 1.25rem, 4rem); }
+}
+
+@media (min-width: 1024px) {
+  .hero-title { font-size: clamp(2.75rem, 3vw + 1.5rem, 5rem); }
+}
+
+/* ── Responsive: prevent text overflow ─────────────── */
+.break-word { word-break: break-word; }
+.overflow-wrap-anywhere { overflow-wrap: anywhere; }
+
+/* ── Scroll-driven reveal animations (CSS only, zero JS) ── */
+@supports (animation-timeline: view()) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    animation: revealUp 0.6s ease both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+  .reveal-delay-1 { animation-delay: 0.1s; }
+  .reveal-delay-2 { animation-delay: 0.2s; }
+  .reveal-delay-3 { animation-delay: 0.3s; }
+}
+
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Gradient text utility (emerald — Advertising Systems) ───────── */
+.text-gradient {
+  background: linear-gradient(135deg, #0c5a3a 0%, #21b081 50%, #1a9b6e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html:has(#dark-mode-toggle:checked) .text-gradient {
+  background: linear-gradient(135deg, #1a9b6e 0%, #21b081 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glass card ─────────────────────────────────── */
+.glass {
+  background: var(--surface-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--surface-glass-border);
+  box-shadow: var(--surface-card-shadow);
+  transition: all 0.3s ease;
+}
+
+.glass-strong {
+  background: var(--surface-glass-strong);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-glass-border);
+  box-shadow: var(--surface-card-shadow);
+}
+
+/* ── Mesh gradient background ───────────────────── */
+.mesh-gradient {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 20%, var(--mesh-c1), transparent),
+    radial-gradient(ellipse 60% 80% at 80% 80%, var(--mesh-c2), transparent),
+    radial-gradient(ellipse 50% 50% at 50% 50%, var(--mesh-c3), transparent);
+}
+
+/* ── Dot grid pattern ───────────────────────────── */
+.dot-grid {
+  background-image: radial-gradient(circle, var(--dot-grid-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ── Glow effect (emerald) ──────────────────── */
+.glow-royal-green {
+  box-shadow: 0 0 60px rgba(33, 176, 129, 0.1), 0 0 120px rgba(33, 176, 129, 0.04);
+}
+
+/* ── Subtle noise texture overlay ───────────────── */
+.noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Smooth border glow on hover ────────────────── */
+.hover-glow {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hover-glow:hover {
+  border-color: var(--surface-glass-border-hover);
+  box-shadow: var(--surface-card-shadow-hover);
+}
+
+/* ── Pulse ring animation ───────────────────────── */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+.pulse-ring::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid #21b081;
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+/* ── Section divider line ───────────────────────── */
+.section-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--section-line-color), transparent);
+}
+
+/* ── Theme toggle switch ────────────────────────── */
+.theme-switch {
+  width: 44px;
+  height: 24px;
+  background: var(--border);
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.theme-switch::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+html:has(#dark-mode-toggle:checked) .theme-switch {
+  background: #21b081;
+}
+
+html:has(#dark-mode-toggle:checked) .theme-switch::after {
+  transform: translateX(20px);
+}
+
+/* ── Theme-aware icon colors ────────────────────── */
+.theme-icon-sun { opacity: 1; }
+.theme-icon-moon { opacity: 0.4; }
+
+html:has(#dark-mode-toggle:checked) .theme-icon-sun { opacity: 0.4; }
+html:has(#dark-mode-toggle:checked) .theme-icon-moon { opacity: 1; }
+
+/* ── Primary CTA: whole green (solid fill) ── */
+.btn-cta-primary {
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-cta-primary .cta-accent-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: #21b081; /* emerald primary */
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+.btn-cta-primary:hover .cta-accent-line {
+  background: #1a9b6e; /* royal-green-600 */
+}
+.btn-cta-primary.rounded-lg { border-radius: 0.5rem; }
+.btn-cta-primary .cta-accent-line.rounded-t-lg { border-radius: 0.5rem; }
+
+/* ── Secondary (blue — Reputation Systems) ── */
+.btn-secondary {
+  border: 1px solid rgba(50, 131, 240, 0.4);
+  color: #2563eb;
+  background: transparent;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.btn-secondary:hover {
+  border-color: #3283f0;
+  color: #1d4ed8;
+  background: rgba(50, 131, 240, 0.05);
+}
+.link-secondary {
+  color: #2563eb;
+  transition: color 0.2s ease;
+}
+.link-secondary:hover {
+  color: #3283f0;
+}
+html:has(#dark-mode-toggle:checked) .link-secondary {
+  color: #60a5fa;
+}
+html:has(#dark-mode-toggle:checked) .link-secondary:hover {
+  color: #93c5fd;
+}
+
+/* ── Subtle brand watermark (layering / premium detail) ── */
+.watermark-brand {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.watermark-brand::before {
+  content: 'AdvertisingSystems';
+  font-size: clamp(8rem, 18vw, 20rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  opacity: 0.02;
+  white-space: nowrap;
+  user-select: none;
+}
+.watermark-brand-on-dark::before {
+  color: #f8fafc;
+  opacity: 0.03;
+}

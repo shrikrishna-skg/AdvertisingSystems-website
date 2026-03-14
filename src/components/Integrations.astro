@@ -1,0 +1,52 @@
+---
+const platforms = [
+  { name: 'Google Ads', letter: 'G', color: 'bg-blue-500/10 text-blue-600' },
+  { name: 'Meta Ads', letter: 'M', color: 'bg-indigo-500/10 text-indigo-600' },
+  { name: 'Booking.com', letter: 'B', color: 'bg-blue-500/10 text-blue-600' },
+  { name: 'Expedia', letter: 'E', color: 'bg-yellow-500/10 text-yellow-600' },
+  { name: 'TripAdvisor', letter: 'T', color: 'bg-royal-green-500/10 text-royal-green-600' },
+  { name: 'Google Analytics', letter: 'GA', color: 'bg-orange-500/10 text-orange-600' },
+  { name: 'Instagram', letter: 'IG', color: 'bg-pink-500/10 text-pink-600' },
+  { name: 'Facebook', letter: 'F', color: 'bg-blue-500/10 text-blue-600' },
+  { name: 'TikTok', letter: 'TT', color: 'bg-slate-500/10 text-slate-600' },
+  { name: 'LinkedIn', letter: 'Li', color: 'bg-blue-500/10 text-blue-600' },
+  { name: 'YouTube', letter: 'YT', color: 'bg-red-500/10 text-red-600' },
+  { name: 'Airbnb', letter: 'A', color: 'bg-rose-500/10 text-rose-600' },
+  { name: 'Hotels.com', letter: 'H', color: 'bg-red-500/10 text-red-600' },
+  { name: 'Bing Ads', letter: 'B', color: 'bg-teal-500/10 text-teal-600' },
+  { name: 'Twitter/X', letter: 'X', color: 'bg-slate-500/10 text-slate-600' },
+  { name: 'Pinterest', letter: 'P', color: 'bg-red-500/10 text-red-600' },
+  { name: 'Trivago', letter: 'Tr', color: 'bg-blue-500/10 text-blue-600' },
+  { name: 'Kayak', letter: 'K', color: 'bg-orange-500/10 text-orange-600' },
+  { name: 'Vrbo', letter: 'V', color: 'bg-blue-500/10 text-blue-600' },
+  { name: 'HubSpot', letter: 'HS', color: 'bg-orange-500/10 text-orange-600' },
+  { name: 'Shopify', letter: 'S', color: 'bg-green-500/10 text-green-600' },
+  { name: 'Snapchat', letter: 'SC', color: 'bg-yellow-500/10 text-yellow-600' },
+  { name: 'Reddit Ads', letter: 'R', color: 'bg-orange-500/10 text-orange-600' },
+  { name: 'Amazon Ads', letter: 'A', color: 'bg-amber-500/10 text-amber-600' },
+];
+---
+
+<section class="py-28" aria-labelledby="integrations-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 id="integrations-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
+        Connects to everything. <span class="text-gradient">Already.</span>
+      </h2>
+      <p class="reveal mt-5 text-lg text-[var(--text-tertiary)] leading-relaxed">
+        One integration to rule your entire ad stack. No more tab-switching.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
+      {platforms.map((platform) => (
+        <div class="reveal glass hover-glow flex flex-col items-center gap-2.5 p-4 rounded-xl transition-all duration-200">
+          <div class={`w-10 h-10 ${platform.color} rounded-lg flex items-center justify-center text-sm font-bold`}>
+            {platform.letter}
+          </div>
+          <span class="text-[11px] text-[var(--text-tertiary)] font-medium text-center leading-tight">{platform.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
