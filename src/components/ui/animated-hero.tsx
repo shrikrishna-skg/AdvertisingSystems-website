@@ -59,7 +59,7 @@ function AnimatedHero({
             {titlesList.map((title, index) => (
               <motion.span
                 key={index}
-                className="absolute left-1/2 top-0 -translate-x-1/2 w-full whitespace-nowrap font-semibold text-royal-green-500 bg-clip-text text-transparent bg-gradient-to-r from-royal-green-600 to-royal-green-500"
+                className="absolute left-1/2 top-0 -translate-x-1/2 w-full whitespace-nowrap font-semibold text-[var(--text-primary)]"
                 initial={{ opacity: 0, y: "-100%" }}
                 transition={{ type: "spring", stiffness: 50 }}
                 animate={

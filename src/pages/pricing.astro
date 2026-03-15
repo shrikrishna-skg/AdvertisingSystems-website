@@ -36,18 +36,18 @@ function formatCell(value: boolean | string): string {
 
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center min-w-0">
         <div class="reveal inline-flex items-center gap-2 glass rounded-full px-4 py-2 sm:px-5 mb-6 sm:mb-8">
-          <span class="w-2 h-2 bg-royal-green-400 rounded-full animate-pulse shrink-0"></span>
+          <span class="w-2 h-2 bg-[var(--text-muted)] rounded-full animate-pulse shrink-0"></span>
           <span class="text-xs sm:text-sm font-medium text-[var(--text-tertiary)]">Plans & comparison</span>
         </div>
 
         <h1 id="pricing-heading" class="reveal text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em] break-words">
-          Simple pricing. <span class="text-gradient">No games.</span>
+          Simple pricing. <span class="text-[var(--text-primary)]">No games.</span>
         </h1>
         <p class="reveal mt-6 text-xl sm:text-2xl font-medium text-[var(--text-secondary)] max-w-2xl mx-auto">
           One price per plan. No % of ad spend, no overages. See how we compare to Madgicx, Optmyzr, and Smartly.
         </p>
         <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#plans" class="inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+          <a href="#plans" class="inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg ">
             View plans
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
@@ -66,7 +66,7 @@ function formatCell(value: boolean | string): string {
     <section id="compare" class="py-28" aria-labelledby="compare-heading">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="compare-heading" class="reveal text-center text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-          How we <span class="text-gradient">compare</span>
+          How we <span class="text-[var(--text-primary)]">compare</span>
         </h2>
         <p class="reveal mt-4 text-center text-lg font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto">
           AdvertisingSystems vs leading ad management tools. We focus on transparent pricing and cross-channel coverage.
@@ -76,7 +76,7 @@ function formatCell(value: boolean | string): string {
           <table class="w-full min-w-[800px] border-collapse glass rounded-2xl overflow-hidden" role="table">
             <thead>
               <tr class="border-b border-[var(--border)]">
-                <th class="text-left p-4 sm:p-5 font-semibold text-[var(--text-primary)] bg-royal-green-500/5">Tool</th>
+                <th class="text-left p-4 sm:p-5 font-semibold text-[var(--text-primary)] bg-[var(--surface-alt)]">Tool</th>
                 <th class="text-left p-4 sm:p-5 font-semibold text-[var(--text-primary)]">Pricing model</th>
                 <th class="text-left p-4 sm:p-5 font-semibold text-[var(--text-primary)]">Starting price</th>
                 <th class="text-left p-4 sm:p-5 font-semibold text-[var(--text-primary)]">Platforms</th>
@@ -87,10 +87,10 @@ function formatCell(value: boolean | string): string {
             </thead>
             <tbody>
               {competitors.map((row, i) => (
-                <tr class={`border-b border-[var(--border)] last:border-b-0 ${row.name === 'AdvertisingSystems' ? 'bg-royal-green-500/5' : ''}`}>
+                <tr class={`border-b border-[var(--border)] last:border-b-0 ${row.name === 'AdvertisingSystems' ? 'bg-[var(--surface-alt)]' : ''}`}>
                   <td class="p-4 sm:p-5 font-semibold text-[var(--text-primary)]">
                     {row.name === 'AdvertisingSystems' ? (
-                      <span class="text-royal-green-600">AdvertisingSystems</span>
+                      <span class="text-[var(--text-primary)]">AdvertisingSystems</span>
                     ) : (
                       row.name
                     )}
@@ -119,7 +119,7 @@ function formatCell(value: boolean | string): string {
     <section class="py-28" aria-labelledby="different-heading">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="different-heading" class="reveal text-center text-3xl sm:text-4xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-          Why our <span class="text-gradient">pricing</span> is different
+          Why our <span class="text-[var(--text-primary)]">pricing</span> is different
         </h2>
         <p class="reveal mt-4 text-center text-lg font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto">
           No percentage of spend. No overages. One platform for Google, Meta, and OTAs.
@@ -127,7 +127,7 @@ function formatCell(value: boolean | string): string {
 
         <div class="reveal mt-16 grid md:grid-cols-2 gap-6 lg:gap-8">
           {ourDifferentiators.map((item) => (
-            <div class="glass rounded-2xl p-8 border-t-4 border-royal-green-500/30">
+            <div class="glass rounded-2xl p-8 border-t-4 border-[var(--border)]">
               <h3 class="text-lg font-bold text-[var(--text-primary)] mb-3">{item.title}</h3>
               <p class="text-[var(--text-tertiary)] font-medium leading-relaxed">{item.body}</p>
             </div>
@@ -142,7 +142,7 @@ function formatCell(value: boolean | string): string {
     <section id="plans" class="py-28" aria-labelledby="plans-heading">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="plans-heading" class="reveal text-center text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-          Choose your <span class="text-gradient">plan</span>
+          Choose your <span class="text-[var(--text-primary)]">plan</span>
         </h2>
         <p class="reveal mt-4 text-center text-lg font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto">
           Same powerful AI and modules on every plan. Scale by ad account count.
@@ -151,21 +151,21 @@ function formatCell(value: boolean | string): string {
         <div class="reveal mt-16 grid md:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto items-start">
           {pricingPlans.map((plan) => (
             <article class={`relative glass rounded-2xl p-8 transition-all duration-300 overflow-visible ${
-              plan.highlighted ? 'border-royal-green-500/30 shadow-lg shadow-royal-green-500/[0.08]' : ''
+              plan.highlighted ? 'border-[var(--border)] shadow-lg' : ''
             } ${plan.badge ? 'pt-10' : ''}`}>
               {plan.highlighted && (
-                <span class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-royal-green-300 via-royal-green-500 to-royal-green-600 rounded-t-2xl" aria-hidden="true"></span>
+                <span class="absolute top-0 left-0 right-0 h-1 bg-[var(--text-primary)] rounded-t-2xl" aria-hidden="true"></span>
               )}
               {plan.badge && (
                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <span class="bg-royal-green-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full whitespace-nowrap">{plan.badge}</span>
+                  <span class="bg-[var(--text-primary)] text-white text-xs font-semibold px-3 py-1.5 rounded-full whitespace-nowrap">{plan.badge}</span>
                 </div>
               )}
 
               <div class="text-center min-h-[4.5rem] flex flex-col justify-center">
                 <h3 class="text-lg font-bold text-[var(--text-primary)]">{plan.name}</h3>
                 <div class="mt-4 flex items-baseline justify-center gap-1 pb-0.5">
-                  <span class={`text-4xl font-bold tracking-[-0.03em] leading-tight ${plan.highlighted ? 'text-gradient' : 'text-[var(--text-primary)]'}`}>{plan.price}</span>
+                  <span class={`text-4xl font-bold tracking-[-0.03em] leading-tight ${'text-[var(--text-primary)]'}`}>{plan.price}</span>
                   {plan.period && <span class="text-[var(--text-muted)] text-sm font-medium">{plan.period}</span>}
                 </div>
                 <p class="mt-2 text-sm font-medium text-[var(--text-tertiary)]">{plan.description}</p>
@@ -197,7 +197,7 @@ function formatCell(value: boolean | string): string {
     <section class="py-28" aria-labelledby="features-heading">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="features-heading" class="reveal text-center text-3xl sm:text-4xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-          What's in each <span class="text-gradient">plan</span>
+          What's in each <span class="text-[var(--text-primary)]">plan</span>
         </h2>
         <p class="reveal mt-4 text-center text-lg font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto">
           Full feature breakdown. No hidden paywalls inside your tier.
@@ -209,7 +209,7 @@ function formatCell(value: boolean | string): string {
               <tr class="border-b border-[var(--border)]">
                 <th class="text-left p-4 sm:p-5 font-semibold text-[var(--text-primary)]">Feature</th>
                 <th class="text-center p-4 sm:p-5 font-semibold text-[var(--text-primary)]">Starter</th>
-                <th class="text-center p-4 sm:p-5 font-semibold text-[var(--text-primary)] bg-royal-green-500/5">Professional</th>
+                <th class="text-center p-4 sm:p-5 font-semibold text-[var(--text-primary)] bg-[var(--surface-alt)]">Professional</th>
                 <th class="text-center p-4 sm:p-5 font-semibold text-[var(--text-primary)]">Enterprise</th>
               </tr>
             </thead>
@@ -218,7 +218,7 @@ function formatCell(value: boolean | string): string {
                 <tr class={`border-b border-[var(--border)] last:border-b-0 ${i % 2 === 1 ? 'bg-[var(--surface-alt)]/50' : ''}`}>
                   <td class="p-4 sm:p-5 text-sm font-medium text-[var(--text-secondary)]">{row.feature}</td>
                   <td class="p-4 sm:p-5 text-center text-sm text-[var(--text-tertiary)]">{formatCell(row.starter)}</td>
-                  <td class="p-4 sm:p-5 text-center text-sm text-[var(--text-tertiary)] bg-royal-green-500/5">
+                  <td class="p-4 sm:p-5 text-center text-sm text-[var(--text-tertiary)] bg-[var(--surface-alt)]">
                     {formatCell(row.professional)}
                   </td>
                   <td class="p-4 sm:p-5 text-center text-sm text-[var(--text-tertiary)]">{formatCell(row.enterprise)}</td>
@@ -236,7 +236,7 @@ function formatCell(value: boolean | string): string {
     <section class="py-28" aria-labelledby="roi-heading">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 id="roi-heading" class="reveal text-3xl sm:text-4xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-          One platform. One price. <span class="text-gradient">Predictable.</span>
+          One platform. One price. <span class="text-[var(--text-primary)]">Predictable.</span>
         </h2>
         <p class="reveal mt-6 text-lg font-medium text-[var(--text-tertiary)] leading-relaxed">
           On average, customers see 4.2x ROAS improvement and 38% lower CPA in the first 90 days. Your subscription pays for itself when the AI finds the inefficiencies you've been missing.
@@ -246,19 +246,19 @@ function formatCell(value: boolean | string): string {
         </p>
         <ul class="reveal mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-[var(--text-secondary)] font-medium" role="list">
           <li class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-royal-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-[var(--text-primary)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
             14-day free trial
           </li>
           <li class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-royal-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-[var(--text-primary)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
             No credit card required
           </li>
           <li class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-royal-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-[var(--text-primary)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
             Cancel anytime
@@ -291,13 +291,13 @@ function formatCell(value: boolean | string): string {
 
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 id="final-cta-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
-          Ready for <span class="text-gradient">predictable pricing?</span>
+          Ready for <span class="text-[var(--text-primary)]">predictable pricing?</span>
         </h2>
         <p class="reveal mt-6 text-lg font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto">
           Start a free trial or book a demo. No hidden fees — ever.
         </p>
         <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/signup" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+          <a href="/signup" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg ">
             Start free trial
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

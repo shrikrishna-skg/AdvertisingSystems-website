@@ -1,6 +1,9 @@
 import type { APIRoute } from 'astro';
+import { getAllSlugs } from '../data/blog-posts';
 
 const siteUrl = 'https://advertisingsystems.ai';
+
+const blogUrls = getAllSlugs().map((slug) => ({ url: `/blog/${slug}`, priority: '0.7', changefreq: 'monthly' }));
 
 const pages = [
   { url: '/', priority: '1.0', changefreq: 'weekly' },
@@ -12,6 +15,7 @@ const pages = [
   { url: '/features/budget-intelligence', priority: '0.8', changefreq: 'monthly' },
   { url: '/about', priority: '0.7', changefreq: 'monthly' },
   { url: '/blog', priority: '0.8', changefreq: 'weekly' },
+  ...blogUrls,
   { url: '/contact', priority: '0.7', changefreq: 'monthly' },
   { url: '/book-demo', priority: '0.9', changefreq: 'monthly' },
   { url: '/faq', priority: '0.7', changefreq: 'monthly' },

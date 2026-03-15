@@ -70,13 +70,13 @@ const pricingFaqs = [
 
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 id="pricing-intel-heading" class="reveal text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
-          Pricing that <span class="text-gradient">scales with you.</span>
+          Pricing that <span class="text-[var(--text-primary)]">scales with you.</span>
         </h1>
         <p class="reveal mt-6 text-xl sm:text-2xl font-medium text-[var(--text-secondary)] max-w-2xl mx-auto">
           No hidden fees. No per-click tricks. One price for everything.
         </p>
         <div class="reveal mt-10">
-          <a href="#plans" class="inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+          <a href="#plans" class="inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg ">
             See plans
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
@@ -92,7 +92,7 @@ const pricingFaqs = [
     <section class="py-28" aria-labelledby="why-heading">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="why-heading" class="reveal text-center text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-          Why we keep it <span class="text-gradient">simple</span>
+          Why we keep it <span class="text-[var(--text-primary)]">simple</span>
         </h2>
         <p class="reveal mt-4 text-center text-lg font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto">
           You should know exactly what you’re paying for. No surprises at the end of the month.
@@ -100,7 +100,7 @@ const pricingFaqs = [
 
         <div class="reveal mt-16 grid md:grid-cols-3 gap-8">
           {whyClarity.map((item) => (
-            <div class="glass rounded-2xl p-8 border-t-4 border-royal-green-500/30">
+            <div class="glass rounded-2xl p-8 border-t-4 border-[var(--border)]">
               <h3 class="text-lg font-bold text-[var(--text-primary)] mb-3">{item.title}</h3>
               <p class="text-[var(--text-tertiary)] font-medium leading-relaxed">{item.body}</p>
             </div>
@@ -115,13 +115,13 @@ const pricingFaqs = [
     <section class="py-28" aria-labelledby="included-heading">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="included-heading" class="reveal text-center text-3xl sm:text-4xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-          What you get in <span class="text-gradient">every plan</span>
+          What you get in <span class="text-[var(--text-primary)]">every plan</span>
         </h2>
         <ul class="reveal mt-10 space-y-4" role="list">
           {includedInAll.map((item) => (
             <li class="flex items-start gap-3 text-[var(--text-secondary)] font-medium">
-              <span class="mt-1 w-5 h-5 rounded-full bg-royal-green-500/20 flex items-center justify-center shrink-0" aria-hidden="true">
-                <svg class="w-3 h-3 text-royal-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <span class="mt-1 w-5 h-5 rounded-full bg-[var(--surface-alt)] flex items-center justify-center shrink-0" aria-hidden="true">
+                <svg class="w-3 h-3 text-[var(--text-tertiary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </span>
@@ -138,7 +138,7 @@ const pricingFaqs = [
     <section id="plans" class="py-28" aria-labelledby="plans-heading">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="plans-heading" class="reveal text-center text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-          Plans that <span class="text-gradient">scale</span>
+          Plans that <span class="text-[var(--text-primary)]">scale</span>
         </h2>
         <p class="reveal mt-4 text-center text-lg font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto">
           Start small, grow when you’re ready. No long-term contract.
@@ -147,21 +147,21 @@ const pricingFaqs = [
         <div class="reveal mt-16 grid md:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto items-start">
           {pricingPlans.map((plan) => (
             <article class={`relative glass rounded-2xl p-8 transition-all duration-300 overflow-visible ${
-              plan.highlighted ? 'border-royal-green-500/30 shadow-lg shadow-royal-green-500/[0.08]' : ''
+              plan.highlighted ? 'border-[var(--border)] shadow-lg' : ''
             } ${plan.badge ? 'pt-10' : ''}`}>
               {plan.highlighted && (
-                <span class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-royal-green-300 via-royal-green-500 to-royal-green-600 rounded-t-2xl" aria-hidden="true"></span>
+                <span class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--text-tertiary)] to-[var(--text-primary)] rounded-t-2xl" aria-hidden="true"></span>
               )}
               {plan.badge && (
                 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <span class="bg-royal-green-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full whitespace-nowrap">{plan.badge}</span>
+                  <span class="bg-[var(--text-primary)] text-white text-xs font-semibold px-3 py-1.5 rounded-full whitespace-nowrap">{plan.badge}</span>
                 </div>
               )}
 
               <div class="text-center min-h-[4.5rem] flex flex-col justify-center">
                 <h3 class="text-lg font-bold text-[var(--text-primary)]">{plan.name}</h3>
                 <div class="mt-4 flex items-baseline justify-center gap-1 pb-0.5">
-                  <span class={`text-4xl font-bold tracking-[-0.03em] leading-tight ${plan.highlighted ? 'text-gradient' : 'text-[var(--text-primary)]'}`}>{plan.price}</span>
+                  <span class={`text-4xl font-bold tracking-[-0.03em] leading-tight ${plan.highlighted ? 'text-[var(--text-primary)]' : 'text-[var(--text-primary)]'}`}>{plan.price}</span>
                   {plan.period && <span class="text-[var(--text-muted)] text-sm font-medium">{plan.period}</span>}
                 </div>
                 <p class="mt-2 text-sm font-medium text-[var(--text-tertiary)]">{plan.description}</p>
@@ -193,7 +193,7 @@ const pricingFaqs = [
     <section class="py-28" aria-labelledby="investment-heading">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 id="investment-heading" class="reveal text-3xl sm:text-4xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-          One platform. One price. <span class="text-gradient">Predictable.</span>
+          One platform. One price. <span class="text-[var(--text-primary)]">Predictable.</span>
         </h2>
         <p class="reveal mt-6 text-lg font-medium text-[var(--text-tertiary)] leading-relaxed">
           Teams running Google, Meta, and OTA ads use AdvertisingSystems to cut wasted spend and push budget to what converts. On average, 4.2x ROAS improvement and 38% lower CPA in the first 90 days. Your subscription pays for itself when the AI finds the inefficiencies you’ve been missing.
@@ -214,26 +214,26 @@ const pricingFaqs = [
         </h2>
         <ul class="reveal mt-8 space-y-3 text-[var(--text-secondary)] font-medium" role="list">
           <li class="flex items-center justify-center gap-2">
-            <svg class="w-5 h-5 text-royal-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-[var(--text-primary)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
             14-day free trial
           </li>
           <li class="flex items-center justify-center gap-2">
-            <svg class="w-5 h-5 text-royal-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-[var(--text-primary)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
             No credit card required
           </li>
           <li class="flex items-center justify-center gap-2">
-            <svg class="w-5 h-5 text-royal-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-5 h-5 text-[var(--text-primary)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
             Cancel anytime
           </li>
         </ul>
         <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg ">
             Book a demo
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -252,7 +252,7 @@ const pricingFaqs = [
     <section class="py-28" aria-labelledby="faq-heading">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="faq-heading" class="reveal text-center text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-          Pricing <span class="text-gradient">questions</span>
+          Pricing <span class="text-[var(--text-primary)]">questions</span>
         </h2>
 
         <div class="reveal mt-16 space-y-3">
@@ -288,13 +288,13 @@ const pricingFaqs = [
 
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 id="final-cta-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
-          Ready for <span class="text-gradient">predictable pricing?</span>
+          Ready for <span class="text-[var(--text-primary)]">predictable pricing?</span>
         </h2>
         <p class="reveal mt-6 text-lg font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto">
           See plans, start a free trial, or book a demo. No hidden fees — ever.
         </p>
         <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg ">
             Book your demo
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

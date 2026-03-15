@@ -1,0 +1,125 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getPostBySlug } from '../../data/blog-posts';
+
+const { slug } = Astro.params;
+const post = slug ? getPostBySlug(slug) : undefined;
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog' },
+  { name: post.title, href: `/blog/${post.slug}` },
+];
+---
+
+<Layout
+  title={`${post.title} — Blog | AdvertisingSystems`}
+  description={post.excerpt}
+  breadcrumbs={breadcrumbs}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    author: { '@type': 'Organization', name: post.author.name },
+    publisher: { '@type': 'Organization', name: 'AdvertisingSystems' },
+  }}
+>
+  <Navbar />
+  <Breadcrumb items={breadcrumbs} />
+  <main>
+    <article class="relative pt-24 pb-20 sm:pt-32 sm:pb-28" aria-labelledby="post-title">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="mb-12">
+          <a
+            href="/blog"
+            class="inline-flex items-center gap-2 text-sm font-medium text-[var(--color-link)] hover:underline mb-6"
+          >
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            Back to Blog
+          </a>
+          <p class="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-3">
+            {post.category}
+          </p>
+          <h1 id="post-title" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em] mb-6">
+            {post.title}
+          </h1>
+          <p class="text-lg text-[var(--text-tertiary)] leading-relaxed mb-6">
+            {post.excerpt}
+          </p>
+          <div class="flex flex-wrap items-center gap-3 text-sm text-[var(--text-muted)]">
+            <time datetime={new Date(post.date).toISOString().slice(0, 10)}>{post.date}</time>
+            <span aria-hidden="true">&middot;</span>
+            <span>{post.readTime}</span>
+            <span aria-hidden="true">&middot;</span>
+            <span>{post.author.name}{post.author.role ? `, ${post.author.role}` : ''}</span>
+          </div>
+        </header>
+
+        <div class="prose-blog">
+          {post.content.map((section) => (
+            <section class="mb-10">
+              {section.title && (
+                <h2 class="text-xl sm:text-2xl font-bold text-[var(--text-primary)] tracking-[-0.02em] mb-4">
+                  {section.title}
+                </h2>
+              )}
+              <div class="space-y-4">
+                {section.paragraphs.map((para) => (
+                  <p class="text-[var(--text-secondary)] leading-relaxed">
+                    {para}
+                  </p>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+
+        <footer class="mt-16 pt-10 border-t border-[var(--border)]">
+          <a
+            href="/blog"
+            class="inline-flex items-center gap-2 text-[var(--color-link)] font-semibold hover:underline"
+          >
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            All posts
+          </a>
+          <div class="mt-10 flex flex-col sm:flex-row gap-4">
+            <a
+              href="/book-demo"
+              class="inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors"
+            >
+              Book a Demo
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+            <a
+              href="/signup"
+              class="inline-flex items-center justify-center gap-2 btn-secondary font-semibold text-base px-8 py-3.5 rounded-lg"
+            >
+              Start Free Trial
+            </a>
+          </div>
+        </footer>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .prose-blog p {
+    color: var(--text-secondary);
+  }
+</style>

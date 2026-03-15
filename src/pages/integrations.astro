@@ -58,7 +58,7 @@ const integrationGroups = [
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div class="text-center">
           <h1 id="integrations-heading" class="reveal text-4xl sm:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-            Powerful <span class="text-gradient">Integrations</span>
+            <span class="text-[var(--text-primary)]">Powerful Integrations</span>
           </h1>
           <p class="reveal mt-5 text-lg text-[var(--text-tertiary)] max-w-2xl mx-auto leading-relaxed">
             Connect your entire advertising stack. AdvertisingSystems works with the platforms you already use.
@@ -73,7 +73,7 @@ const integrationGroups = [
     <section class="py-20" aria-labelledby="why-one-heading">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 id="why-one-heading" class="reveal text-2xl sm:text-3xl font-bold text-[var(--text-primary)] tracking-[-0.02em]">
-          One login. <span class="text-gradient">One dashboard.</span>
+          One login. <span class="text-[var(--text-primary)]">One dashboard.</span>
         </h2>
         <p class="reveal mt-4 text-lg font-medium text-[var(--text-tertiary)] leading-relaxed">
           Stop switching tabs. Connect Google Ads, Meta, and OTAs in one place — one AI optimizes across all of them, and you see unified reporting and attribution instead of scattered spreadsheets.
@@ -87,7 +87,7 @@ const integrationGroups = [
     <section class="py-20" aria-labelledby="how-connect-heading">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 id="how-connect-heading" class="reveal text-2xl sm:text-3xl font-bold text-[var(--text-primary)] tracking-[-0.02em]">
-          Connect in <span class="text-gradient">minutes.</span>
+          Connect in <span class="text-[var(--text-primary)]">minutes.</span>
         </h2>
         <p class="reveal mt-4 text-lg font-medium text-[var(--text-tertiary)] leading-relaxed">
           OAuth with Google, Meta, and OTAs — no CSV imports. Your data syncs every 15 minutes. No IT ticket, no custom dev work. Most teams are live in under 15 minutes.
@@ -105,7 +105,7 @@ const integrationGroups = [
             <h2 class="reveal text-xl font-bold text-[var(--text-primary)] mb-6">{group.category}</h2>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {group.items.map((item) => (
-                <div class="reveal glass rounded-2xl p-6 text-center hover:border-royal-green-500/20 transition-all duration-300 hover-glow">
+                <div class="reveal glass rounded-2xl p-6 text-center hover:border-[var(--border)] transition-all duration-300 hover-glow">
                   <div class="w-14 h-14 rounded-xl bg-[var(--surface-alt)] border border-[var(--border)] flex items-center justify-center mx-auto mb-4">
                     <span class={`text-lg font-bold ${item.color}`}>{item.letter}</span>
                   </div>
@@ -131,7 +131,7 @@ const integrationGroups = [
             <a href="/signup" class="inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-royal-green-600 transition-colors">
               Start Free Trial
             </a>
-            <a href="/contact" class="inline-flex items-center justify-center gap-2 text-[var(--text-tertiary)] border border-[var(--border)] font-semibold px-6 py-3 rounded-lg hover:border-royal-green-500/30 hover:text-royal-green-600 transition-colors">
+            <a href="/contact" class="inline-flex items-center justify-center gap-2 text-[var(--text-tertiary)] border border-[var(--border)] font-semibold px-6 py-3 rounded-lg hover:border-[var(--color-link)] hover:text-[var(--color-link)] transition-colors">
               Request Integration
             </a>
           </div>
@@ -152,16 +152,16 @@ const integrationGroups = [
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[var(--hero-glow)] rounded-full blur-[128px]"></div>
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 id="integrations-cta-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
-          Ready to <span class="text-gradient">connect your stack?</span>
+          Ready to <span class="text-[var(--text-primary)]">connect your stack?</span>
         </h2>
         <p class="reveal mt-6 text-lg font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto">
           One platform for Google, Meta, and OTAs. Start your free trial or book a demo to see it in action.
         </p>
         <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/signup" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+          <a href="/signup" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg ">
             Start free trial
           </a>
-          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-[var(--text-secondary)] font-semibold text-base px-8 py-3.5 rounded-lg border border-[var(--border)] hover:border-royal-green-500/30 hover:text-royal-green-600 transition-colors">
+          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-[var(--text-secondary)] font-semibold text-base px-8 py-3.5 rounded-lg border border-[var(--border)] hover:border-[var(--color-link)] hover:text-[var(--color-link)] transition-colors">
             Book a demo
           </a>
         </div>

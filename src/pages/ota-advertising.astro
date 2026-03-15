@@ -53,7 +53,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
         </div>
 
         <h1 id="ota-heading" class="reveal text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em] break-words">
-          OTA <span class="text-gradient">Advertising</span>
+          <span class="text-[var(--text-primary)]">OTA Advertising</span>
         </h1>
         <p class="reveal mt-4 text-xl sm:text-2xl text-[var(--text-secondary)] font-medium">
           Every OTA. One dashboard. AI-optimized.
@@ -62,7 +62,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
           Manage sponsored listings across Booking.com, Expedia, TripAdvisor, Google Hotel Ads, Trivago, and more — with AI that optimizes bids, budgets, and targeting across every platform simultaneously.
         </p>
         <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg ">
             Join the Waitlist
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -82,7 +82,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
         <div class="text-center mb-12">
           <h2 id="stats-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-            The OTA advertising <span class="text-gradient">opportunity</span>
+            The OTA advertising <span class="text-[var(--text-primary)]">opportunity</span>
           </h2>
           <p class="reveal mt-4 text-lg text-[var(--text-tertiary)] max-w-xl mx-auto">OTAs spent $20B+ on marketing in 2025. Your property needs to compete.</p>
         </div>
@@ -90,7 +90,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {otaStats.map((stat) => (
             <div class="reveal glass hover-glow rounded-2xl p-4 sm:p-6 lg:p-8 text-center min-w-0">
-              <div class="text-3xl sm:text-4xl font-bold text-royal-green-500 mb-2">{stat.value}</div>
+              <div class="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-2">{stat.value}</div>
               <div class="text-sm font-bold text-[var(--text-primary)] mb-1">{stat.label}</div>
               <div class="text-xs text-[var(--text-muted)] leading-relaxed">{stat.detail}</div>
             </div>
@@ -106,7 +106,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
         <div class="text-center mb-16">
           <h2 id="pain-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-            Sound <span class="text-gradient">familiar?</span>
+            Sound <span class="text-[var(--text-primary)]">familiar?</span>
           </h2>
           <p class="reveal mt-4 text-lg text-[var(--text-tertiary)] max-w-xl mx-auto">The OTA advertising problems every hotel faces.</p>
         </div>
@@ -134,7 +134,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
         <div class="text-center mb-16">
           <h2 id="platforms-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-            Platforms we're <span class="text-gradient">integrating</span>
+            Platforms we're <span class="text-[var(--text-primary)]">integrating</span>
           </h2>
           <p class="reveal mt-4 text-lg text-[var(--text-tertiary)] max-w-2xl mx-auto">All major OTAs and metasearch engines in one place. Manage sponsored listings, CPC bids, and performance across every platform.</p>
         </div>
@@ -166,7 +166,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
                 <ul class="space-y-1.5">
                   {platform.features.map((feature) => (
                     <li class="flex items-start gap-2 text-xs text-[var(--text-tertiary)]">
-                      <svg class="w-3.5 h-3.5 text-royal-green-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <svg class="w-3.5 h-3.5 text-[var(--text-primary)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
                       {feature}
@@ -187,7 +187,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
         <div class="text-center mb-16">
           <h2 id="mockup-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-            One dashboard for <span class="text-gradient">every OTA.</span>
+            One dashboard for <span class="text-[var(--text-primary)]">every OTA.</span>
           </h2>
         </div>
 
@@ -205,8 +205,8 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
           <div class="p-6 sm:p-8 bg-[var(--surface-alt)]">
             <!-- OTA Status Bar -->
             <div class="glass rounded-lg p-4 mb-6 flex items-center gap-3">
-              <div class="w-8 h-8 rounded-full bg-royal-green-500/20 flex items-center justify-center">
-                <span class="w-3 h-3 bg-royal-green-400 rounded-full animate-pulse"></span>
+              <div class="w-8 h-8 rounded-full bg-[var(--surface-alt)] flex items-center justify-center">
+                <span class="w-3 h-3 bg-[var(--text-muted)] rounded-full animate-pulse"></span>
               </div>
               <div class="flex-1">
                 <div class="text-sm font-semibold text-[var(--text-primary)]">OTA Campaign Manager</div>
@@ -222,7 +222,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
                   <div class="w-6 h-6 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">B</div>
                   <span class="text-xs font-semibold text-[var(--text-primary)]">Booking.com</span>
                 </div>
-                <div class="text-lg font-bold text-royal-green-500">4.8x ROAS</div>
+                <div class="text-lg font-bold text-[var(--text-primary)]">4.8x ROAS</div>
                 <div class="text-xs text-[var(--text-muted)]">$1.24 avg CPC &middot; 312 clicks</div>
               </div>
               <div class="glass rounded-lg p-3">
@@ -230,7 +230,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
                   <div class="w-6 h-6 rounded bg-yellow-500 text-gray-900 flex items-center justify-center text-[10px] font-bold">E</div>
                   <span class="text-xs font-semibold text-[var(--text-primary)]">Expedia</span>
                 </div>
-                <div class="text-lg font-bold text-royal-green-500">5.2x ROAS</div>
+                <div class="text-lg font-bold text-[var(--text-primary)]">5.2x ROAS</div>
                 <div class="text-xs text-[var(--text-muted)]">$0.98 avg CPC &middot; 487 clicks</div>
               </div>
               <div class="glass rounded-lg p-3">
@@ -238,7 +238,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
                   <div class="w-6 h-6 rounded bg-emerald-500 text-white flex items-center justify-center text-[10px] font-bold">T</div>
                   <span class="text-xs font-semibold text-[var(--text-primary)]">TripAdvisor</span>
                 </div>
-                <div class="text-lg font-bold text-royal-green-500">3.9x ROAS</div>
+                <div class="text-lg font-bold text-[var(--text-primary)]">3.9x ROAS</div>
                 <div class="text-xs text-[var(--text-muted)]">$1.96 avg CPC &middot; 189 clicks</div>
               </div>
             </div>
@@ -249,14 +249,14 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
                 <div class="flex items-start justify-between gap-4">
                   <div class="flex-1">
                     <div class="flex items-center gap-2 mb-1">
-                      <span class="w-1.5 h-1.5 bg-royal-green-400 rounded-full"></span>
-                      <span class="text-xs font-semibold text-royal-green-500 uppercase">AI Recommendation</span>
+                      <span class="w-1.5 h-1.5 bg-[var(--text-muted)] rounded-full"></span>
+                      <span class="text-xs font-semibold text-[var(--text-primary)] uppercase">AI Recommendation</span>
                     </div>
                     <div class="text-sm font-medium text-[var(--text-primary)]">Shift $280 from Booking.com to Expedia — higher ROAS this week</div>
                     <div class="text-xs text-[var(--text-muted)] mt-1">Cross-OTA Budget &middot; AI Engine &middot; 8 min ago</div>
                   </div>
                   <div class="text-right shrink-0">
-                    <div class="text-sm font-bold text-royal-green-500">+18% ROAS</div>
+                    <div class="text-sm font-bold text-[var(--text-primary)]">+18% ROAS</div>
                     <div class="text-xs text-[var(--text-muted)]">Est. impact</div>
                   </div>
                 </div>
@@ -283,21 +283,21 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
             <div class="grid grid-cols-3 gap-4">
               <div class="glass rounded-lg p-4 text-center">
                 <div class="text-xs text-[var(--text-muted)] mb-1">Total OTA ROAS</div>
-                <div class="text-2xl font-bold text-royal-green-500">4.6x</div>
+                <div class="text-2xl font-bold text-[var(--text-primary)]">4.6x</div>
                 <div class="mt-2 h-2 rounded-full bg-[var(--progress-track)] overflow-hidden">
                   <div class="h-full rounded-full bg-gradient-to-r from-[var(--bar-fill-from)] to-[var(--bar-fill-to)]" style="width: 78%"></div>
                 </div>
               </div>
               <div class="glass rounded-lg p-4 text-center">
                 <div class="text-xs text-[var(--text-muted)] mb-1">Budget Saved</div>
-                <div class="text-2xl font-bold text-royal-green-500">$2.4K</div>
+                <div class="text-2xl font-bold text-[var(--text-primary)]">$2.4K</div>
                 <div class="mt-2 h-2 rounded-full bg-[var(--progress-track)] overflow-hidden">
                   <div class="h-full rounded-full bg-gradient-to-r from-[var(--bar-fill-from)] to-[var(--bar-fill-to)]" style="width: 65%"></div>
                 </div>
               </div>
               <div class="glass rounded-lg p-4 text-center">
                 <div class="text-xs text-[var(--text-muted)] mb-1">Platforms Active</div>
-                <div class="text-2xl font-bold text-royal-green-500">6</div>
+                <div class="text-2xl font-bold text-[var(--text-primary)]">6</div>
                 <div class="mt-2 h-2 rounded-full bg-[var(--progress-track)] overflow-hidden">
                   <div class="h-full rounded-full bg-gradient-to-r from-[var(--bar-fill-from)] to-[var(--bar-fill-to)]" style="width: 60%"></div>
                 </div>
@@ -315,7 +315,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
         <div class="text-center mb-16">
           <h2 id="capabilities-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-            What you'll <span class="text-gradient">get</span>
+            What you'll <span class="text-[var(--text-primary)]">get</span>
           </h2>
           <p class="reveal mt-4 text-lg text-[var(--text-tertiary)] max-w-xl mx-auto">AI-powered OTA advertising management, built into your existing workflow.</p>
         </div>
@@ -323,8 +323,8 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
         <div class="grid md:grid-cols-2 gap-6">
           {otaCapabilities.map((cap) => (
             <div class="reveal glass hover-glow rounded-2xl p-8">
-              <div class="w-12 h-12 rounded-xl bg-royal-green-500/10 flex items-center justify-center mb-5">
-                <svg class="w-6 h-6 text-royal-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <div class="w-12 h-12 rounded-xl bg-[var(--surface-alt)] border border-[var(--border)] flex items-center justify-center mb-5">
+                <svg class="w-6 h-6 text-[var(--text-tertiary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d={cap.icon} />
                 </svg>
               </div>
@@ -343,7 +343,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
         <div class="text-center mb-16">
           <h2 id="market-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-            The OTA <span class="text-gradient">landscape</span>
+            The OTA <span class="text-[var(--text-primary)]">landscape</span>
           </h2>
           <p class="reveal mt-4 text-lg text-[var(--text-tertiary)] max-w-xl mx-auto">OTAs invest billions in marketing. Your property competes against that spend for every booking.</p>
         </div>
@@ -351,7 +351,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {otaMarketInsights.map((insight) => (
             <div class="reveal glass hover-glow rounded-2xl p-6">
-              <div class="text-2xl font-bold text-royal-green-500 mb-1">{insight.spend}</div>
+              <div class="text-2xl font-bold text-[var(--text-primary)] mb-1">{insight.spend}</div>
               <h3 class="text-base font-bold text-[var(--text-primary)] mb-2">{insight.title}</h3>
               <p class="text-xs text-[var(--text-tertiary)] leading-relaxed">{insight.detail}</p>
             </div>
@@ -362,22 +362,22 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
           <h3 class="text-lg font-bold text-[var(--text-primary)] mb-4">How OTA Advertising Works</h3>
           <div class="grid sm:grid-cols-3 gap-6">
             <div>
-              <div class="w-8 h-8 rounded-lg bg-royal-green-500/10 flex items-center justify-center mb-3">
-                <span class="text-sm font-bold text-royal-green-600">1</span>
+              <div class="w-8 h-8 rounded-lg bg-[var(--surface-alt)] border border-[var(--border)] flex items-center justify-center mb-3">
+                <span class="text-sm font-bold text-[var(--text-tertiary)]">1</span>
               </div>
               <h4 class="text-sm font-bold text-[var(--text-primary)] mb-1">Bid for Placement</h4>
               <p class="text-xs text-[var(--text-tertiary)] leading-relaxed">Properties bid CPC or CPA to appear in premium positions within OTA search results. Higher bids = higher visibility.</p>
             </div>
             <div>
-              <div class="w-8 h-8 rounded-lg bg-royal-green-500/10 flex items-center justify-center mb-3">
-                <span class="text-sm font-bold text-royal-green-600">2</span>
+              <div class="w-8 h-8 rounded-lg bg-[var(--surface-alt)] border border-[var(--border)] flex items-center justify-center mb-3">
+                <span class="text-sm font-bold text-[var(--text-tertiary)]">2</span>
               </div>
               <h4 class="text-sm font-bold text-[var(--text-primary)] mb-1">Travelers Click</h4>
               <p class="text-xs text-[var(--text-tertiary)] leading-relaxed">When a traveler searches for accommodation, your sponsored listing appears prominently. You pay only when they click (CPC) or book (CPA).</p>
             </div>
             <div>
-              <div class="w-8 h-8 rounded-lg bg-royal-green-500/10 flex items-center justify-center mb-3">
-                <span class="text-sm font-bold text-royal-green-600">3</span>
+              <div class="w-8 h-8 rounded-lg bg-[var(--surface-alt)] border border-[var(--border)] flex items-center justify-center mb-3">
+                <span class="text-sm font-bold text-[var(--text-tertiary)]">3</span>
               </div>
               <h4 class="text-sm font-bold text-[var(--text-primary)] mb-1">Convert & Measure</h4>
               <p class="text-xs text-[var(--text-tertiary)] leading-relaxed">Track bookings, revenue, and ROAS per platform. AdvertisingSystems unifies this data and optimizes bids across all OTAs automatically.</p>
@@ -394,7 +394,7 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
         <div class="text-center mb-16">
           <h2 id="compare-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-            Why not manage OTAs <span class="text-gradient">manually?</span>
+            Why not manage OTAs <span class="text-[var(--text-primary)]">manually?</span>
           </h2>
         </div>
 
@@ -405,39 +405,39 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
                 <tr class="border-b border-[var(--border)]">
                   <th class="text-left p-4 text-[var(--text-muted)] font-semibold text-xs uppercase tracking-wider">Capability</th>
                   <th class="text-center p-4 text-[var(--text-muted)] font-semibold text-xs uppercase tracking-wider">Manual (OTA Extranets)</th>
-                  <th class="text-center p-4 text-royal-green-600 font-semibold text-xs uppercase tracking-wider bg-royal-green-500/5">AdvertisingSystems</th>
+                  <th class="text-center p-4 text-[var(--text-tertiary)] font-semibold text-xs uppercase tracking-wider bg-[var(--surface-alt)]">AdvertisingSystems</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-[var(--border-subtle)]">
                 <tr>
                   <td class="p-4 text-[var(--text-primary)] font-medium">Unified dashboard</td>
                   <td class="p-4 text-center text-red-400">&#x2717; Separate logins per OTA</td>
-                  <td class="p-4 text-center text-royal-green-500 bg-royal-green-500/5">&#x2713; All OTAs in one view</td>
+                  <td class="p-4 text-center text-[var(--text-primary)] bg-[var(--surface-alt)]">&#x2713; All OTAs in one view</td>
                 </tr>
                 <tr>
                   <td class="p-4 text-[var(--text-primary)] font-medium">AI bid optimization</td>
                   <td class="p-4 text-center text-red-400">&#x2717; Manual CPC adjustments</td>
-                  <td class="p-4 text-center text-royal-green-500 bg-royal-green-500/5">&#x2713; Real-time ML optimization</td>
+                  <td class="p-4 text-center text-[var(--text-primary)] bg-[var(--surface-alt)]">&#x2713; Real-time ML optimization</td>
                 </tr>
                 <tr>
                   <td class="p-4 text-[var(--text-primary)] font-medium">Cross-OTA budget allocation</td>
                   <td class="p-4 text-center text-red-400">&#x2717; Fixed budgets per platform</td>
-                  <td class="p-4 text-center text-royal-green-500 bg-royal-green-500/5">&#x2713; Automatic reallocation</td>
+                  <td class="p-4 text-center text-[var(--text-primary)] bg-[var(--surface-alt)]">&#x2713; Automatic reallocation</td>
                 </tr>
                 <tr>
                   <td class="p-4 text-[var(--text-primary)] font-medium">Occupancy-aware pacing</td>
                   <td class="p-4 text-center text-red-400">&#x2717; Ads run at all times</td>
-                  <td class="p-4 text-center text-royal-green-500 bg-royal-green-500/5">&#x2713; Auto-pause at high occupancy</td>
+                  <td class="p-4 text-center text-[var(--text-primary)] bg-[var(--surface-alt)]">&#x2713; Auto-pause at high occupancy</td>
                 </tr>
                 <tr>
                   <td class="p-4 text-[var(--text-primary)] font-medium">Cross-channel attribution</td>
                   <td class="p-4 text-center text-red-400">&#x2717; Each OTA reports alone</td>
-                  <td class="p-4 text-center text-royal-green-500 bg-royal-green-500/5">&#x2713; OTA + Google + Meta together</td>
+                  <td class="p-4 text-center text-[var(--text-primary)] bg-[var(--surface-alt)]">&#x2713; OTA + Google + Meta together</td>
                 </tr>
                 <tr>
                   <td class="p-4 text-[var(--text-primary)] font-medium">Time investment</td>
                   <td class="p-4 text-center text-red-400">2-4 hours daily</td>
-                  <td class="p-4 text-center text-royal-green-500 bg-royal-green-500/5">15 minutes setup, then automated</td>
+                  <td class="p-4 text-center text-[var(--text-primary)] bg-[var(--surface-alt)]">15 minutes setup, then automated</td>
                 </tr>
               </tbody>
             </table>
@@ -453,44 +453,44 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
         <div class="text-center mb-16">
           <h2 id="related-heading" class="reveal text-3xl sm:text-4xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-            Works with your <span class="text-gradient">full stack</span>
+            Works with your <span class="text-[var(--text-primary)]">full stack</span>
           </h2>
           <p class="reveal mt-4 text-lg text-[var(--text-tertiary)] max-w-xl mx-auto">OTA advertising plugs into the same AI engine that optimizes Google, Meta, and everything else.</p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <a href="/features/campaign-management" class="reveal group glass hover-glow rounded-2xl p-6 transition-all duration-300 block">
-            <h3 class="text-base font-bold text-[var(--text-primary)] mb-2 group-hover:text-royal-green-600 transition-colors">Campaign Intelligence</h3>
-            <span class="text-xs font-semibold bg-royal-green-500/10 text-royal-green-600 px-2.5 py-1 rounded-full">One command center</span>
+            <h3 class="text-base font-bold text-[var(--text-primary)] mb-2 group-hover:text-[var(--text-tertiary)] transition-colors">Campaign Intelligence</h3>
+            <span class="text-xs font-semibold bg-[var(--surface-alt)] border border-[var(--border)] text-[var(--text-tertiary)] px-2.5 py-1 rounded-full">One command center</span>
             <div class="mt-4">
-              <svg class="w-5 h-5 text-[var(--text-muted)] group-hover:text-royal-green-500 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <svg class="w-5 h-5 text-[var(--text-muted)] group-hover:text-[var(--text-primary)] group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </div>
           </a>
           <a href="/features/ai-optimization" class="reveal group glass hover-glow rounded-2xl p-6 transition-all duration-300 block">
-            <h3 class="text-base font-bold text-[var(--text-primary)] mb-2 group-hover:text-royal-green-600 transition-colors">AI Optimization</h3>
-            <span class="text-xs font-semibold bg-royal-green-500/10 text-royal-green-600 px-2.5 py-1 rounded-full">Autonomous bidding</span>
+            <h3 class="text-base font-bold text-[var(--text-primary)] mb-2 group-hover:text-[var(--text-tertiary)] transition-colors">AI Optimization</h3>
+            <span class="text-xs font-semibold bg-[var(--surface-alt)] border border-[var(--border)] text-[var(--text-tertiary)] px-2.5 py-1 rounded-full">Autonomous bidding</span>
             <div class="mt-4">
-              <svg class="w-5 h-5 text-[var(--text-muted)] group-hover:text-royal-green-500 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <svg class="w-5 h-5 text-[var(--text-muted)] group-hover:text-[var(--text-primary)] group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </div>
           </a>
           <a href="/features/analytics" class="reveal group glass hover-glow rounded-2xl p-6 transition-all duration-300 block">
-            <h3 class="text-base font-bold text-[var(--text-primary)] mb-2 group-hover:text-royal-green-600 transition-colors">Performance Analytics</h3>
-            <span class="text-xs font-semibold bg-royal-green-500/10 text-royal-green-600 px-2.5 py-1 rounded-full">Cross-OTA reporting</span>
+            <h3 class="text-base font-bold text-[var(--text-primary)] mb-2 group-hover:text-[var(--text-tertiary)] transition-colors">Performance Analytics</h3>
+            <span class="text-xs font-semibold bg-[var(--surface-alt)] border border-[var(--border)] text-[var(--text-tertiary)] px-2.5 py-1 rounded-full">Cross-OTA reporting</span>
             <div class="mt-4">
-              <svg class="w-5 h-5 text-[var(--text-muted)] group-hover:text-royal-green-500 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <svg class="w-5 h-5 text-[var(--text-muted)] group-hover:text-[var(--text-primary)] group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </div>
           </a>
           <a href="/features/budget-intelligence" class="reveal group glass hover-glow rounded-2xl p-6 transition-all duration-300 block">
-            <h3 class="text-base font-bold text-[var(--text-primary)] mb-2 group-hover:text-royal-green-600 transition-colors">Budget Allocator</h3>
-            <span class="text-xs font-semibold bg-royal-green-500/10 text-royal-green-600 px-2.5 py-1 rounded-full">Cross-channel budgets</span>
+            <h3 class="text-base font-bold text-[var(--text-primary)] mb-2 group-hover:text-[var(--text-tertiary)] transition-colors">Budget Allocator</h3>
+            <span class="text-xs font-semibold bg-[var(--surface-alt)] border border-[var(--border)] text-[var(--text-tertiary)] px-2.5 py-1 rounded-full">Cross-channel budgets</span>
             <div class="mt-4">
-              <svg class="w-5 h-5 text-[var(--text-muted)] group-hover:text-royal-green-500 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <svg class="w-5 h-5 text-[var(--text-muted)] group-hover:text-[var(--text-primary)] group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </div>
@@ -513,13 +513,13 @@ const platformLogos: Record<string, { letter: string; bg: string; text: string }
 
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 id="cta-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
-          Be first to master <span class="text-gradient">OTA advertising.</span>
+          Be first to master <span class="text-[var(--text-primary)]">OTA advertising.</span>
         </h2>
         <p class="reveal mt-6 text-lg text-[var(--text-tertiary)] max-w-2xl mx-auto leading-relaxed">
           We're building the first unified AI-powered OTA advertising platform. Join the waitlist to get early access when we launch integrations for Booking.com, Expedia, TripAdvisor, and more.
         </p>
         <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+          <a href="/book-demo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg ">
             Join the Waitlist
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

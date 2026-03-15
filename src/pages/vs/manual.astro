@@ -78,12 +78,12 @@ const comparisons = [
 
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="reveal inline-flex items-center gap-2 glass rounded-full px-5 py-2 mb-8">
-          <span class="w-2 h-2 bg-royal-green-400 rounded-full animate-pulse"></span>
+          <span class="w-2 h-2 bg-[var(--text-muted)] rounded-full animate-pulse"></span>
           <span class="text-sm font-medium text-[var(--text-tertiary)]">Comparison</span>
         </div>
 
         <h1 class="reveal text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
-          AdvertisingSystems vs <span class="text-gradient">Manual Management</span>
+          AdvertisingSystems vs <span class="text-[var(--text-primary)]">Manual Management</span>
         </h1>
         <p class="reveal mt-6 text-lg sm:text-xl font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto leading-relaxed">
           Ditch the spreadsheets and guesswork. See why teams switch from manual ad management to AI-powered automation.
@@ -100,7 +100,7 @@ const comparisons = [
               <p class="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-4">{item.label}</p>
               <div class="space-y-3">
                 <div class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-royal-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                  <svg class="w-5 h-5 text-[var(--text-tertiary)] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                   <span class="text-sm text-[var(--text-secondary)]">{item.us}</span>
                 </div>
                 <div class="flex items-start gap-3">
@@ -121,14 +121,14 @@ const comparisons = [
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="reveal text-3xl sm:text-4xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-            Feature-by-feature <span class="text-gradient">comparison</span>
+            Feature-by-feature <span class="text-[var(--text-primary)]">comparison</span>
           </h2>
         </div>
 
         <div class="reveal glass rounded-2xl overflow-hidden">
           <div class="grid grid-cols-3 gap-0">
             <div class="p-4 border-b border-[var(--border)] font-semibold text-[var(--text-primary)]">Feature</div>
-            <div class="p-4 border-b border-[var(--border)] text-center font-semibold text-royal-green-600">AdvertisingSystems</div>
+            <div class="p-4 border-b border-[var(--border)] text-center font-semibold text-[var(--text-primary)]">AdvertisingSystems</div>
             <div class="p-4 border-b border-[var(--border)] text-center font-semibold text-[var(--text-muted)]">Manual</div>
 
             {features.map((f) => (
@@ -136,14 +136,14 @@ const comparisons = [
                 <div class="p-4 border-b border-[var(--border)] text-sm text-[var(--text-secondary)]">{f.name}</div>
                 <div class="p-4 border-b border-[var(--border)] flex justify-center">
                   {f.us ? (
-                    <svg class="w-5 h-5 text-royal-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <svg class="w-5 h-5 text-[var(--text-tertiary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                   ) : (
                     <svg class="w-5 h-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                   )}
                 </div>
                 <div class="p-4 border-b border-[var(--border)] flex justify-center">
                   {f.them ? (
-                    <svg class="w-5 h-5 text-royal-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <svg class="w-5 h-5 text-[var(--text-tertiary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                   ) : (
                     <svg class="w-5 h-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                   )}
@@ -162,14 +162,14 @@ const comparisons = [
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="reveal text-3xl sm:text-4xl font-bold text-[var(--text-primary)] tracking-[-0.03em]">
-            Why teams <span class="text-gradient">switch</span>
+            Why teams <span class="text-[var(--text-primary)]">switch</span>
           </h2>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
           {advantages.map((adv) => (
             <div class="reveal glass hover-glow rounded-2xl p-8">
-              <div class="w-12 h-12 rounded-xl bg-royal-green-500/10 text-royal-green-600 flex items-center justify-center mb-5">
+              <div class="w-12 h-12 rounded-xl bg-[var(--surface-alt)] border border-[var(--border)] flex items-center justify-center mb-5 text-[var(--text-tertiary)]">
                 {adv.icon === 'automation' && (
                   <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M21.015 4.356v4.992" /></svg>
                 )}
@@ -205,13 +205,13 @@ const comparisons = [
 
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight tracking-[-0.03em]">
-          Switch to <span class="text-gradient">AdvertisingSystems</span>
+          Switch to <span class="text-[var(--text-primary)]">AdvertisingSystems</span>
         </h2>
         <p class="reveal mt-6 text-lg font-medium text-[var(--text-tertiary)] max-w-2xl mx-auto leading-relaxed">
           Stop managing ads manually. Let AI handle the heavy lifting while you focus on strategy and growth.
         </p>
         <div class="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/signup" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg shadow-royal-green-500/20">
+          <a href="/signup" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-royal-green-500 text-white font-semibold text-base px-8 py-3.5 rounded-lg hover:bg-royal-green-600 transition-colors shadow-lg ">
             Start Free Trial
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
           </a>
